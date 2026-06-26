@@ -81,11 +81,7 @@ CBZ polymorphs (forms I and II) were prepared according to a previously reported
 
 ![image p1](crops/p1_b19.png)
 
-![image p1](crops/p1_b20.png)
-
 ![image p1](crops/p1_b17.png)
-
-![image p1](crops/p1_b18.png)
 
 ![image p1](crops/p1_b21.png)
 
@@ -96,8 +92,6 @@ CBZ polymorphs (forms I and II) were prepared according to a previously reported
 ![image p1](crops/p1_embimg9.png)
 
 ![image p1](crops/p1_b14.png)
-
-![image p1](crops/p1_b15.png)
 
 ![image p1](crops/p1_b27.png)
 
@@ -210,38 +204,6 @@ Changes in the appearance of sample tablets were evaluated by calculating the di
 
 ![image p4](crops/p4_b4.png)
 
-![image p4](crops/p4_b5.png)
-
-![image p4](crops/p4_b6.png)
-
-![image p4](crops/p4_b7.png)
-
-![image p4](crops/p4_b8.png)
-
-![image p4](crops/p4_b9.png)
-
-![image p4](crops/p4_b10.png)
-
-![image p4](crops/p4_b11.png)
-
-![image p4](crops/p4_b12.png)
-
-![image p4](crops/p4_b13.png)
-
-![image p4](crops/p4_b14.png)
-
-![image p4](crops/p4_b15.png)
-
-![image p4](crops/p4_b16.png)
-
-![image p4](crops/p4_b17.png)
-
-![image p4](crops/p4_b18.png)
-
-![image p4](crops/p4_b19.png)
-
-![image p4](crops/p4_b20.png)
-
 
 <!-- end of page 4 -->
 
@@ -305,34 +267,6 @@ An evaluation of photodegradation of the surface of the sample tablets of CBZ po
 ![image p6](crops/p6_b8.png)
 
 ![image p6](crops/p6_b14.png)
-
-![image p6](crops/p6_b15.png)
-
-![image p6](crops/p6_b16.png)
-
-![image p6](crops/p6_b17.png)
-
-![image p6](crops/p6_b18.png)
-
-![image p6](crops/p6_b19.png)
-
-![image p6](crops/p6_b20.png)
-
-![image p6](crops/p6_b21.png)
-
-![image p6](crops/p6_b22.png)
-
-![image p6](crops/p6_b23.png)
-
-![image p6](crops/p6_b24.png)
-
-![image p6](crops/p6_b25.png)
-
-![image p6](crops/p6_b26.png)
-
-![image p6](crops/p6_b27.png)
-
-![image p6](crops/p6_b28.png)
 
 
 <!-- end of page 6 -->

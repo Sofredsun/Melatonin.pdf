@@ -1,0 +1,2186 @@
+[
+  {
+    "page": 0,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      89.1,
+      522.3,
+      143.1
+    ],
+    "text": "Manipulating Light-Induced Dynamic Macro-Movement and Static\nPhotonic Properties within 1D Isostructural Hydrogen-Bonded\nMolecular Cocrystals",
+    "crop_path": null,
+    "n_words": 14,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      150.6,
+      339.1,
+      162.6
+    ],
+    "text": "Shuzhen Li, Bo Lu, Xiaoyu Fang, and Dongpeng Yan*",
+    "crop_path": null,
+    "n_words": 9,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      185.0,
+      290.6,
+      412.5
+    ],
+    "text": "Abstract: Smart molecular crystals with light-driven mechan-\nical responses have received interest owing to their potential\nuses in molecular machines, artificial muscles, and biomimet-\nics. However, challenges remain in control over both the\ndynamic photo-mechanical behaviors and static photonic\nproperties of molecular crystals based on the same molecule.\nHerein, we show the construction of isostructural co-crystals\nallows their light-induced cracking and jumping behaviors\n(photosalient effect) to be controlled. Hydrogen-bonded co-\ncrystals from 4-(1-naphthylvinyl)pyridine (NVP) with co-\nformers (tetrafluoro-4-hydroxybenzoic acid (THA) and tetra-\nfluorobenzoic acid (TA)) crystallize as isostructural crystals,\nbut have different static and dynamic photo-mechanical\nbehaviors. These differences are due to alternations in the\norientation of NVP and hydrogen-bonding modes of the co-\nformers. After light activation, the 1D NVP-TA crystal splits\nand shears off within 1 s. For NVP-THA, its photostability and\nhigh quantum yield give novel photonic properties, including\nlow optical waveguide loss, highly polarized anisotropy, and\nefficient up-conversion fluorescence.",
+    "crop_path": null,
+    "n_words": 153,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      424.9,
+      109.5,
+      435.9
+    ],
+    "text": "Introduction",
+    "crop_path": null,
+    "n_words": 1,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      449.5,
+      290.6,
+      573.5
+    ],
+    "text": "Smart responsive materials that exhibit mechanically\ndynamic properties upon external stimuli (e.g., heat, pressure,\nlight and solvent atmosphere) have been the focus of broad\nand intense research owing to their promising applications to\nactuators, molecular robotics, artificial muscles, and biomi-\nmetics.[1–6] Typically, the fundamental principles behind these\ndynamic responses are based on the energy conversion and\ntransformation between electric, light, chemical, and/or\nthermal energies into micro-scale mechanical motion (e.g.,\nrotating, cracking, expansion, bending, folding, and curl-\ning).[7–14] Of the possible natural stimuli, light is advantageous",
+    "crop_path": null,
+    "n_words": 85,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      185.0,
+      542.9,
+      286.0
+    ],
+    "text": "not only for its wireless actuation and quick responsiveness,\nbut also its ability to adjust irradiation position, intensity, and\ntime. Collectively, these properties allow for tuning of the\nmechanically responsive level and monitoring the energy\nconversion process as a whole.[15,16] The last decade has seen\na significant increase in work on photo-mechanical responsive\nmaterials, with most systems based on soft matters with well-\nknown photoactive functional groups (e.g., azobenzene,\ndiarylethenes, spiropyrans, anthracene, and chromenes).[17–20]",
+    "crop_path": null,
+    "n_words": 74,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      288.5,
+      542.9,
+      355.0
+    ],
+    "text": "Usually, basic mechanisms for dynamic mechanical responses\nare divided into either chemical reactions (e.g., photo-\ninduced dimerization[21,22]) or changes of the molecular\nconfiguration (e.g., cis-trans isomerization[23,24]). For example,\nYu and colleagues reported anisotropic and efficient self-\nhealing hydrogels under NIR irradiation and low pH.[25]",
+    "crop_path": null,
+    "n_words": 44,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      357.5,
+      542.8,
+      389.5
+    ],
+    "text": "Separately, ZhaoQs group developed a liquid crystal polymer\nactuator for soft robotics, where UV light application\ncontrolled the crosslinking dimerization of anthracene.[26]",
+    "crop_path": null,
+    "n_words": 22,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      392.0,
+      542.9,
+      734.5
+    ],
+    "text": "Compared with the hydrogels, liquid crystals, and poly-\nmers, dynamic molecular crystals remain in an earlier stage of\ndevelopment. This is likely due to the high crystalline energy\nand rigidity that has to be overcome during the deformation\nprocess.[27–29] Until recently, photo-mechanical molecular\ncrystals become a topic of keen interest, owing to their utility\nin future intelligent materials. This is due to the dense and\nordered stacking of the crystal structure, which facilitates\na rapid energy conversion and coupling between light and\nmechanical energy; moreover, the deep mechanisms behind\nthis photo-mechanical process are able to be further analyzed\nbased on the well-defined crystal structures.[30–32] In this sense,\nco-crystals, referring to crystalline materials that are assem-\nbled by two or more molecules into the same crystal lattice in\nsupramolecular architecture and crystal engineering,[33] have\nsupplied a new platform to design and tune these static photo-\nfunctional and photo-mechanical properties. In co-crystals,\nthe molecular stacking fashions and basic intermolecular\ninteractions (e.g., hydrogen bonding, van der Waals and\nelectrostatic forces) can be rationally tailored by selecting\nsuitable target molecule and the co-assembled units (co-\nformers).[34–39] Thus, the co-crystals may emerge novel photo-\nrelated properties that are different from the sum of\nindividual molecules.[9,40–51] For example, Morimoto and Ire\nhave developed a co-crystal of a diarylethene compound with\nperfluoronaphthalene in a 1:2 ratio. The resulting co-crystal\nhad a reversible photo-induced bending motion owing to the\nphoto-generated ring-close reaction.[52] However, to date,\ncontrolling the dynamic photo-mechanical behaviors of the\nsame molecule based on its co-crystal formation remains very",
+    "crop_path": null,
+    "n_words": 253,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.7,
+      592.1,
+      174.5,
+      600.1
+    ],
+    "text": "[*] S. Li, B. Lu, X. Fang, Prof. D. Yan",
+    "crop_path": null,
+    "n_words": 10,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      64.6,
+      602.1,
+      290.5,
+      640.1
+    ],
+    "text": "Beijing Key Laboratory of Energy Conversion and Storage Materials,\nCollege of Chemistry, Beijing Normal University\nBeijing 100875 (P. R. China)\nE-mail: yandp@bnu.edu.cn",
+    "crop_path": null,
+    "n_words": 22,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      64.6,
+      644.2,
+      284.2,
+      692.2
+    ],
+    "text": "Prof. D. Yan\nKey Laboratory of Theoretical and Computational Photochemistry,\nMinistry of Education, College of Chemistry, Beijing Normal\nUniversity\nBeijing 100875 (P. R. China)",
+    "crop_path": null,
+    "n_words": 24,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      64.6,
+      696.4,
+      290.6,
+      734.4
+    ],
+    "text": "Supporting information (Experimental details and characterizations\nof molecular co-crystals) and the ORCID identification number(s) for\nthe author(s) of this article can be found under:\nhttps://doi.org/10.1002/anie.202009714.",
+    "crop_path": null,
+    "n_words": 25,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      316.0,
+      51.8,
+      542.9,
+      84.5
+    ],
+    "text": "How to cite: Angew. Chem. Int. Ed. 2020, 59, 22623–22630\nInternational Edition:\ndoi.org/10.1002/anie.202009714\nGerman Edition:\ndoi.org/10.1002/ange.202009714",
+    "crop_path": null,
+    "n_words": 16,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      747.7,
+      576.8,
+      757.7
+    ],
+    "text": "22623\nAngew. Chem. Int. Ed. 2020, 59, 22623 – 22630\nT 2020 Wiley-VCH GmbH",
+    "crop_path": null,
+    "n_words": 14,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      50.7,
+      707.2,
+      60.6,
+      716.9
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p0_b13.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      50.7,
+      695.9,
+      60.7,
+      705.6
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p0_b14.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      472.0,
+      750.3,
+      542.8,
+      757.2
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p0_b21.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 0,
+    "candidate_type": "vector_candidate",
+    "bbox": [
+      52.4,
+      59.6,
+      157.2,
+      79.5
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p0_vec0.png",
+    "n_words": null,
+    "is_boilerplate": true
+  },
+  {
+    "page": 0,
+    "candidate_type": "vector_candidate",
+    "bbox": [
+      -0.8,
+      -0.8,
+      596.1,
+      47.6
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p0_vec1.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      102.9,
+      156.1,
+      113.9
+    ],
+    "text": "Results and Discussion",
+    "crop_path": null,
+    "n_words": 3,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      127.5,
+      290.6,
+      366.5
+    ],
+    "text": "Herein, we report that the dynamic photo-mechanical and\nthe static photonic properties (including optical waveguide,\npolarization and up-conversion fluorescence) of molecular\ncrystals are effectively tuned on and off using the design of the\nisostructural co-crystals. 4-(1-Naphthylvinyl)pyridine (NVP,\nFigure 1) is selected as the target building block owing to its\nexcellent optoelectronic properties; notably, NVP has also\nbeen applied in logic gates and optical switches.[53] Moreover,\nthe potential [2+2] cycloaddition of the olefin pairs in NVP\nmake it possible to achieve a microscopic photo-mechanical\nresponse. Tetrafluoro-4-hydroxybenzoic acid (THA) and\ntetrafluorobenzoic acid (TA) both have similar sizes and\nshapes, and are attractive hydrogen-bond-organized co-for-\nmer units for supramolecular assemblies, which facilitate the\nformation of isostructural crystals and modification of their\nintermolecular interactions and photonic performances. The\ndifferent numbers of hydrogen-bond sites in THA and TA\nmay further regulate the process of photo-mechanical con-\nversion. NVP-TA has exhibited rapid photo-induced cracking\nand movement based on the energy conversion from light to\nmechanical energy, termed the photosalient effect.[11,12,15,54,55]",
+    "crop_path": null,
+    "n_words": 164,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      369.0,
+      290.6,
+      481.5
+    ],
+    "text": "More specifically, the photosalient effect stands for a mechan-\nical response (including a sudden and rapid burst, forceful\njumps, and/or spring off many pieces) after exposure to UV\nlight. This effect presents a visualized process through the\nrelease of stress during the photochemical reaction. The\nisostructural NVP-THA has high photostability without light-\ndriven jumping and shows well-defined, static photonic\nperformances in 1D optical waveguide, polarization and up-\nconversion fluorescence. These findings thus provide new\ninsights into the mechanism behind hydrogen-bonding self-",
+    "crop_path": null,
+    "n_words": 81,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      81.5,
+      542.9,
+      458.5
+    ],
+    "text": "Co-crystallized NVP-THA and NVP-TA were fabricated\nthrough a facile, solution-based process in methanol using\na 1:1 stoichiometric ratio under ambient conditions. Within\none week, this approach yields two types of one-dimensional\n(1D) needle-like transparent microcrystals. Single-crystal X-\nray diffraction (XRD) measurements show the NVP-THA\nand NVP-TA crystals both belong to a monoclinic crystal\nsystem (space group P21/c) and have nearly identical cell\nparameters, presenting with the same two-dimensional (2D)\nlamellar structures through hydrogen bonding and p-p\ninteractions (Figures S1 and S2). Thus, NVP-THA and\nNVP-TA are regarded as isostructural systems. In both co-\ncrystals, proton transfer occurs from the hydrogen-bond\ndonor (THA and TA) to the acceptor (NVP), thus forming\na strong charge-assisted hydrogen bond between two assem-\nbled units. The connection of NVP and TA/THA molecules\nare interacted through hydrogen bonds to form infinite\ncolumns (Table S1). Both the NVP and co-former units\nexhibit anti-parallel arrangement modes, in which the NVP\ndimers form an H-type aggregation, with distances of 3.55 and\n3.61 c between the neighboring olefin groups of the adjacent\nNVP (Figure S3). This aggregation facilitates the [2+2]\ncycloaddition upon UV irradiation. It is also noteworthy that\nbesides the intermolecular hydrogen bonds (e.g., N@H···O,\nC@H···O and C@H···F) in the NVP-TA co-crystal, the NVP-\nTHA motif also involves another O@H···O hydrogen bond\nbetween THA molecules (Figure S4). Additionally, powder\nXRD profiles of NVP-THA and NVP-TA are in agreement\nwith their simulated patterns (Figure S5), suggesting the high\nyield and purity of the as-prepared samples during co-\ncrystallization. The strong (200) and (020) diffraction peaks\nin the XRD patterns indicate obvious preferred orientations\nfor both NVP-THA and NVP-TA.",
+    "crop_path": null,
+    "n_words": 268,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      461.0,
+      542.9,
+      700.0
+    ],
+    "text": "To determine any potential photo-active properties be-\ntween two types of isostructural molecular crystals, 1D NVP-\nTA and NVP-THA crystals were first observed under\nfluorescence\nmicroscopy\nexcited\nby\n365 nm\nUV\nlight\n(100 mWcm@2). Interestingly, NVP-TA crystals exhibit an\nobvious photo-responsive behavior (e.g., splitting or explo-\nsion) upon UV excitation. As shown in Figure 2a, the NVP-\nTA crystal retains its integrity and transparent 1D rod-like\nstructure before irradiation, and has a well-defined green\nphotoemission. After UV light irradiation, the NVP-TA\ncrystal starts to crack along the [002] direction obviously, with\nthe fracturing degree increasing with the increasing duration\nof UVexposure. The green fluorescence at the cracked points\nalso becomes brighter relative to the unbroken locations; this\ncan be a result of the efficient optical waveguiding property in\nthe 1D molecular crystal, which allows fluorescence visual-\nization during the dynamic photo-mechanical conversion\nprocess. The fluorescence spectra for NVP-TA also confirm\nthat the emission intensity at 490 nm in the same position is\nincreased greatly after splitting (Figure 2b); however, there is\nno obvious change in the emission wavelength.",
+    "crop_path": null,
+    "n_words": 178,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      702.5,
+      542.8,
+      734.5
+    ],
+    "text": "It is observed that the photo-responsive cracking time is\nstrongly related to both the crystal size and morphology:\nwhen monitoring the NVP-TA with a relatively smaller width",
+    "crop_path": null,
+    "n_words": 27,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      686.3,
+      290.0,
+      734.4
+    ],
+    "text": "Figure 1. Molecular co-crystals assembled from the chromophore\nmolecule (4-(1-naphthylvinyl) pyridine (NVP)) and co-formers (2,3,5,6-\ntetrafluorobenzoic acid (TA), 2,3,5,6-tetrafluoro-4-hydroxybenzoic acid\n(THA)). The two resulting isostructural molecular crystals have notably\ndifferent photo-responsive behaviors.",
+    "crop_path": null,
+    "n_words": 32,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      18.4,
+      747.7,
+      542.8,
+      757.7
+    ],
+    "text": "22624\nwww.angewandte.org\nT 2020 Wiley-VCH GmbH\nAngew. Chem. Int. Ed. 2020, 59, 22623 – 22630",
+    "crop_path": null,
+    "n_words": 15,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      578.1,
+      16.8,
+      585.6,
+      825.7
+    ],
+    "text": " 15213773, 2020, 50, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/anie.202009714 by ITMO University, Wiley Online Library on [26/06/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+    "crop_path": null,
+    "n_words": 38,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      48.0,
+      515.5,
+      295.0,
+      679.0
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p1_b8.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "vector_candidate",
+    "bbox": [
+      -0.8,
+      -0.8,
+      596.1,
+      79.0
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p1_vec0.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 2,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      357.5,
+      290.6,
+      700.0
+    ],
+    "text": "(approximately 20 mm), the needle-like crystal splits and\nshears off rapidly within 1 second (Figure 2c), and the broken\nsection moves out of visible sight (Movies S1–S3). Such\nobservation is understood by considering that the co-crystalQs\nsmall size allows the photo-mechanical conversion to be\nachieved more easily. This is due to the short accumulation\ntime needed to overcome the internal crystalline energy of\nthe molecular crystals. Moreover, the bulky NVP-TA crystal\nwith a much larger size (approximately 2 cm) is further\nobserved at a macroscopic scale under 365 nm UV light\n(100 mWcm@2), which undergoes three processes (Movie S4).\nFirstly, the large crystal begins to flip at 10 s, after which new\nsmaller sections appear when the irradiation time reaches\n19 s. Finally, the crystals start to explode into many micro-/\nnano-sized fragments. The fragments randomly jump away\nfrom their original positions in different directions, with the\ntraveling distance of several millimeters as extending irradi-\nation time, which is attributed to the increased stress\ngenerated from different axes onto the 1D anisotropic\nstructure. To the best of our understanding, single-component\nmolecular crystals containing a photosalient effect have been\ncontinuously reported; however, knowledge regarding the\nphoto-induced free jumping and popping actuation phenom-\nena in the two-component co-crystal systems observed here\nremains very limited. Since the light-induced dynamic macro-\nmovement and photoemission at the macroscopic level can be\neasily observed by the naked eye, the NVP-TA system\ndescribed here may serve as a new, easy tool for two-channel\nUV detection from both spatial movement and fluorescence\nvisualization views.",
+    "crop_path": null,
+    "n_words": 256,
+    "is_boilerplate": false
+  },
+  {
+    "page": 2,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      702.5,
+      290.6,
+      734.5
+    ],
+    "text": "To better understand the mechanism behind the obvious\nphoto-mechanical characteristics, the NVP-TA crystal was\nsubjected to a series of characterizations, including atomic",
+    "crop_path": null,
+    "n_words": 22,
+    "is_boilerplate": false
+  },
+  {
+    "page": 2,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      58.5,
+      542.9,
+      332.0
+    ],
+    "text": "force microscope (AFM), differential scanning calorimetry\n(DSC), UV/vis absorption, and PXRD before and after UV\nlight irradiation. Firstly, the microscopic surface morphology\nof the single crystal was analyzed using AFM (Figure 3).\nBefore photo-irradiation, the surface of the NVP-TA crystal\nis very smooth and flat, with an average roughness value of\n1.04 nm. With increasing UV irradiation, the surface gradu-\nally becomes rougher, with the roughness increasing to\n14.32 nm (for 120 s), which is ascribed to the accumulated\nstrain that is then released during UV irradiation.[56–58] The\nDSC results indicate that the sample undergoes a phase\ntransition with the melting point increasing from 155 to 1828C\nafter irradiation (Figure S6). UV/vis absorption shows the\nmaximal absorption in the original crystal occurs at approx-\nimately 400 nm, which decreases gradually after UV irradi-\nation, and is accompanied by the blue shift towards 385 nm\n(Figure S7), illustrating the decrease in degree of p-conjuga-\ntion. The PXRD results show the disappearance of some\ndiffraction peaks evident in the original crystal after UV\nirradiation (Figure S8), which tends to be in an amorphous\nstate with a degree of crystalline disruption. These observa-\ntions indicate that new species and phases appear within the\nco-crystal during the conversion of UV light into mechanical\nenergy.",
+    "crop_path": null,
+    "n_words": 210,
+    "is_boilerplate": false
+  },
+  {
+    "page": 2,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      334.5,
+      542.9,
+      573.5
+    ],
+    "text": "To further understand the origin of the photo-mechanical\nresponsive process of NVP-TA, we next sought to determine\nthe single-crystal XRD structure from the view a crystallo-\ngraphic study (Figure S3). As described above, before irradi-\nation, the NVP molecules in NVP-TA are connected in\na head-to-tail fashion through p-p interactions, and the\ndistances between the olefin pairs (3.55 c) match the geo-\nmetric criterion for [2+2] cycloaddition (within the range of\n4.20 c).[59,60,28] After a short exposure to UV light, the\ndistance between the C=C bonds of NVP changes slightly\nto 3.56 c, indicating the structure begins to rearrange in\na direction favorable to the cycloaddition reaction. Moreover,\nthe crystallinity of NVP-TA becomes poorer, indicated by\ndecreased single-crystal XRD reflection. After further irra-\ndiation, the original crystal is almost completely destroyed,\nrendering it ill-suited for single crystal diffraction. Therefore,\nwe used the recrystallized method to obtain the single crystals\nof the final photosalient product. Single crystal XRD\nconfirms the occurrence of the photochemical cycloaddition\nreaction, in which the C=C bonds in NVP open to form\ncyclobutane during UV irradiation.",
+    "crop_path": null,
+    "n_words": 179,
+    "is_boilerplate": false
+  },
+  {
+    "page": 2,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      576.0,
+      542.9,
+      711.5
+    ],
+    "text": "Before the photo-induced dimerization, the NVP-TA\ncrystal presents as a monoclinic system with four molecules in\neach unit cell. The adjacent NVP and TA molecules are\nconnected by N@H···O (1.543 c and 2.647 c), C@H···F\n(2.651 c) and C@H···O (2.422 c) hydrogen bonds along the\na axis. The NVP and TA molecules are aligned in parallel,\nseparated by distances of 3.394 and 3.608 c, respectively,\nwhich stack into 1D columns to overlap along the a axis\n(Figure S4 and Table S2). For the photoproduct, the newly\nobtained photochemical dimer compound 1,3-bis(4-pyridyl)-\n2,4-bis(naphthayl)-cyclobutane (PNC) and TA are co-crystal-\nlized into the triclinic space group P(1",
+    "crop_path": null,
+    "n_words": 104,
+    "is_boilerplate": false
+  },
+  {
+    "page": 2,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      437.9,
+      695.2,
+      456.4,
+      704.2
+    ],
+    "text": "E\nC",
+    "crop_path": null,
+    "n_words": 2,
+    "is_boilerplate": false
+  },
+  {
+    "page": 2,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      702.5,
+      542.9,
+      734.5
+    ],
+    "text": "to form a 2D network\nalong the b axis with six molecules per unit cell. Two\nneighboring TA molecules present a parallel arrangement",
+    "crop_path": null,
+    "n_words": 23,
+    "is_boilerplate": false
+  },
+  {
+    "page": 2,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      289.5,
+      284.5,
+      327.5
+    ],
+    "text": "Figure 2. Fluorescence visualization of the light induced splitting and\npopping processes for the 1D NVP-TA crystal (a,c) under 365 nm UV\nlight (100 mWcm@2). b) Fluorescence change for the NVP-TA crystal\nbefore and after light irradiation.",
+    "crop_path": null,
+    "n_words": 37,
+    "is_boilerplate": false
+  },
+  {
+    "page": 2,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      747.7,
+      576.8,
+      757.7
+    ],
+    "text": "22625\nAngew. Chem. Int. Ed. 2020, 59, 22623 – 22630\nT 2020 Wiley-VCH GmbH\nwww.angewandte.org",
+    "crop_path": null,
+    "n_words": 15,
+    "is_boilerplate": false
+  },
+  {
+    "page": 2,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      578.1,
+      16.8,
+      585.6,
+      825.7
+    ],
+    "text": " 15213773, 2020, 50, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/anie.202009714 by ITMO University, Wiley Online Library on [26/06/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+    "crop_path": null,
+    "n_words": 38,
+    "is_boilerplate": false
+  },
+  {
+    "page": 2,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      52.3,
+      59.8,
+      290.7,
+      282.2
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p2_b7.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 2,
+    "candidate_type": "vector_candidate",
+    "bbox": [
+      -0.8,
+      -0.8,
+      596.1,
+      47.6
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p2_vec0.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 3,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      518.5,
+      290.6,
+      642.5
+    ],
+    "text": "with a distance of 3.126 c. PNC and TA are held together by\nN@H···O\n(1.684 c),\nC@H···F\n(2.465 c),\nand\nC@H···O\n(2.384 c) hydrogen bonds (Figures S9 and S10). Additionally,\nthe structural parameters for the PNC molecule are summar-\nized in Table S3. The photoluminescence quantum yield\n(PLQY) of PNC-TA crystal is 43.61%, which is higher than\nthe yield before UV irradiation (21.37%). As observed above,\nthis result is consistent with the enhanced fluorescence\nintensity at the cracking points. Thus, the molecular arrange-\nments and self-assembly patterns are alternated to a notable\ndegree between the NVP-TA and PNC-TA.",
+    "crop_path": null,
+    "n_words": 98,
+    "is_boilerplate": false
+  },
+  {
+    "page": 3,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      645.0,
+      290.6,
+      734.5
+    ],
+    "text": "NMR spectroscopy also provides a direct evidence\nregarding the photochemical reaction and subsequent struc-\ntural changes that occurred during photo-mechanical motions\n(Figure S11–S14). It is noted that new peaks appear at\n5.27 ppm and 45.27/43.44 ppm in the 1H and 13C NMR profiles\nafter UV irradiation, respectively, which are the signals of\n[2+2] cycloaddition product, PNC. The integral values for the\ncyclobutane ring peaks also increase gradually. Other peaks",
+    "crop_path": null,
+    "n_words": 69,
+    "is_boilerplate": false
+  },
+  {
+    "page": 3,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      518.5,
+      542.9,
+      711.5
+    ],
+    "text": "remain approximately the same as the initial co-crystal\nsample along with the time of UV irradiation extending.\nThese results indicate increasing PNC-TA content and that\nthe photochemical reaction has not yet been completed given\nthe presence of products and reactants. Based on the\nintegration of the signals in 1H NMR, the conversion yield\nwithin the NVP-TA crystal is as high as 80.19% (Table S4).\nGiven this, the photochemical [2+2] cycloaddition reaction\nhave caused the photo-responsive behaviors for conversion of\nlight into mechanical energy in the NVP-TA co-crystal.\nMoreover, the conversion yield within initial 5 minutes is\ndetermined as 20.50%, which indicates that the threshold\nvalue for the percentage of photoproducts is not more than\n20.50% before the jumping occurs. Naumov and co-workers\nhave reported that the 12.5% photochemical conversion is\nthe lower limit for the occurrence of the photo-mechanical\nconversion in the single-component molecular crystal.[56]",
+    "crop_path": null,
+    "n_words": 145,
+    "is_boilerplate": false
+  },
+  {
+    "page": 3,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      714.0,
+      542.8,
+      723.0
+    ],
+    "text": "Therefore, macro-scaled crystal movement based on the",
+    "crop_path": null,
+    "n_words": 7,
+    "is_boilerplate": false
+  },
+  {
+    "page": 3,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      478.6,
+      536.4,
+      496.6
+    ],
+    "text": "Figure 3. a)–f) Transformation of crystal surface morphology of NVP-TA as recorded by AFM with different irradiation times (0 s, 20 s, 40 s, 60 s,\nand 120 s). g) The surface roughness of NVP-TA with different irradiation times.",
+    "crop_path": null,
+    "n_words": 39,
+    "is_boilerplate": false
+  },
+  {
+    "page": 3,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      18.4,
+      747.7,
+      542.8,
+      757.7
+    ],
+    "text": "22626\nwww.angewandte.org\nT 2020 Wiley-VCH GmbH\nAngew. Chem. Int. Ed. 2020, 59, 22623 – 22630",
+    "crop_path": null,
+    "n_words": 15,
+    "is_boilerplate": false
+  },
+  {
+    "page": 3,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      578.1,
+      16.8,
+      585.6,
+      825.7
+    ],
+    "text": " 15213773, 2020, 50, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/anie.202009714 by ITMO University, Wiley Online Library on [26/06/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+    "crop_path": null,
+    "n_words": 38,
+    "is_boilerplate": false
+  },
+  {
+    "page": 3,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      158.5,
+      59.8,
+      436.8,
+      471.2
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p3_b4.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 3,
+    "candidate_type": "vector_candidate",
+    "bbox": [
+      -0.8,
+      -0.8,
+      596.1,
+      47.6
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p3_vec0.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 4,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      81.5,
+      290.6,
+      286.0
+    ],
+    "text": "As the NVP-THA is the isostructural hydrogen-bonded\nco-crystal of NVP-TA, it is surprising that no similar photo-\nmechanical behavior is observed (Movie S5). The results\nindicate that the 1D NVP-THA crystal maintains its integrity\nand crystallinity after irradiation for 360 s. During the photo-\nirradiation, the fluorescence intensity also remains unchanged\n(Figure S15). The DSC measurements show nearly identical\nexothermic peaks positions at 1728C (Figure S16). Single\ncrystal XRD analysis further confirms that there is no\nstructural change before and after UV irradiation. Thus, the\nisostructural NVP-TA and NVP-THA co-crystals present\ncompletely different behaviors upon light stimulus, with the\nformer showing rapid light-driven mechanical movement and\nthe latter photo-stability. To understand such obvious dis-\ncrepancies, detailed structural differences and intermolecular\ninteractions within the co-crystals are further analyzed (Fig-\nure 4). As is already known, the [2+2] cycloaddition reactions\nin the solid state need to fulfill SchmidtQs geometric criteria,[61]",
+    "crop_path": null,
+    "n_words": 148,
+    "is_boilerplate": false
+  },
+  {
+    "page": 4,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      287.5,
+      290.6,
+      458.5
+    ],
+    "text": "i.e., the central distance between the olefin pairs (C=C)\nshould be less than 4.2 c, and the relative orientation angles\n(q1, q2 and q3, Scheme S1) between the olefin pairs (C=C)\nprefer their ideal values (08, 908, and 908 respectively). In this\nwork, the distances of separation between the olefin pairs in\nadjacent NVP molecules are 3.61 c and 3.55 c in the NVP-\nTHA and NVP-TA co-crystals, respectively, which meet the\nrequired distance for the cycloaddition reaction to occur after\nUV irradiation. However, for the angle criteria (Table S5),\nthe q1, q2 and q3 angles are 0.318, 86.438, and 85.748\nrespectively in NVP-TA, which are much closer to their ideal\nvalues than those in NVP-THA (0.978, 78.728, and 82.708).\nThus, both the distance and angle criteria are beneficial to the\nphotochemical [2+2] cycloaddition reactions for the NVP-TA\ncrystal.",
+    "crop_path": null,
+    "n_words": 139,
+    "is_boilerplate": false
+  },
+  {
+    "page": 4,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      461.0,
+      290.6,
+      596.5
+    ],
+    "text": "On the other hand, for the NVP-THA co-crystal, each of\nthe two adjacent THA molecules are connected by another\nstrong O@H···O hydrogen bond (d = 1.758 c) with a face-to-\nface stacking orientation, which is further extended as an\ninfinite 1D zig-zag chain. The Hirshfeld surfaces and two-\ndimensional (2D) fingerprint are utilized to analyze various\nintermolecular interaction types for two co-crystals (Fig-\nure S17). The red, white, and blue areas on the surfaces\nrepresent that the intermolecular contact distances are short-\ner, equal to and longer than their van der Waals distances,\nrespectively.[62,63] The contributions of O···H hydrogen bond-\ning in the NVP-THA and NVP-TA co-crystals can be",
+    "crop_path": null,
+    "n_words": 109,
+    "is_boilerplate": false
+  },
+  {
+    "page": 4,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      58.5,
+      542.9,
+      263.0
+    ],
+    "text": "confirmed in the Hirshfeld surfaces indicated by the bright\nred area. It is worth noting that in the bright red area, the\ncolor depth for NVP-THA is higher than that for NVP-TA,\nwhich illustrates its stronger hydrogen bonding relative to\nthat in NVP-TA. In the 2D fingerprint plots, the F···H\ninteractions cover 28% and 29.5% of the total Hirshfeld\nsurfaces in NVP-THA and NVP-TA, respectively. The O···H\ninteraction appears as two sharp spikes in the lower left of the\nplots for the NVP-THA co-crystal, which occupies 15.3% of\nthe total Hirschfeld surface with the points in the (di, de)\nregions of 1.28 c and 1.00 c. Obviously, the O···H interaction\nin the NVP-THA co-crystal is stronger compared to the total\nHirshfeld surface in the NVP-TA (11.4%), indicating the\nNVP-THA co-crystal has close packing and stable lattice\nenergy. This is also consistent with the calculated free volume\n(Table S6) for the NVP-TA crystal (2.1%), which is higher\nthan that of NVP-THA (1.5%) and favors effective move-\nment of the molecules in NVP-TA.",
+    "crop_path": null,
+    "n_words": 171,
+    "is_boilerplate": false
+  },
+  {
+    "page": 4,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      265.5,
+      542.9,
+      470.0
+    ],
+    "text": "It has been reported that the photo-reactor molecules will\nundergo a structural rearrangement process during the [2+2]\nphotodimerization,[14b] which facilitates the continued gener-\nation of the photo-product upon UV irradiation. Herein, an\nO@H···O hydrogen bond between THA appears in NVP-\nTHA, which is the only absent interaction in NVP-TA.\nMolecular mechanics calculation shows the hydrogen bond-\ning energy in NVP-THA is ca. 2.6 fold than that of the NVP-\nTA (Table S7). This hydrogen bond interaction holds the co-\ncrystallized NVP units tightly together in a rigid environment\nalong the (020) direction, and thus restricts and locks the\nmovement and activity of the NVP molecules, which creates\na constrained environment for further [2+2] cycloaddition\nbetween the NVP. Therefore, both the geometric criteria for\nthe adjacent NVP as well as hydrogen bond effect for co-\nformers play key roles in designing next-generation photo-\nmechanical crystalline materials based on 1D isostructural co-\ncrystals.",
+    "crop_path": null,
+    "n_words": 151,
+    "is_boilerplate": false
+  },
+  {
+    "page": 4,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      472.5,
+      542.9,
+      734.5
+    ],
+    "text": "From a different viewpoint, the high photo-stability of the\nNVP-THA could overcome the well-known photo-bleaching\nproblem present in high-efficiency luminescent materials.\nGiven this, we next sought to investigate the interesting\nphoto-physical and photonic properties of the 1D photo-\nstable NVP-THA co-crystal, including optical waveguide,\npolarized fluorescence, and up conversion emission. Time-\nresolved decay emission spectrum of NVP-THA reveals the\nexcited-state\nfluorescence\nlifetime\nis\n2.963 ns\n(Figur-\nes S18,S19, Table S8), which is higher than that of pure\nNVP (1.573 ns). This indicates that the introduction of THA\nis beneficial to restraining the nonradiative process of NVP\nchromophores based on their intermolecular interactions.\nMoreover, the PLQY of NVP-THA is 33.37% (Table S8),\nwhich is higher than most currently reported co-crystals and is\nhelpful to achieve its efficient optical waveguide. Under\nirradiation with a 365 nm laser, the individual NVP-THA co-\ncrystal presents higher blue-green emission intensity on the\ntips than that in the body of the co-crystal (Figure 5a and b).\nThis is an obvious optical waveguide signal for the 1D\nmicrostructure, in which the generated photons are confined\nin the molecular crystals and can propagate from the main\nbody to the ends. By moving the excitation laser beam, the",
+    "crop_path": null,
+    "n_words": 199,
+    "is_boilerplate": false
+  },
+  {
+    "page": 4,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      716.4,
+      279.6,
+      734.4
+    ],
+    "text": "Figure 4. Intermolecular interactions of co-crystals a) NVP-THA and\nb) NVP-TA.",
+    "crop_path": null,
+    "n_words": 11,
+    "is_boilerplate": false
+  },
+  {
+    "page": 4,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      747.7,
+      576.8,
+      757.7
+    ],
+    "text": "22627\nAngew. Chem. Int. Ed. 2020, 59, 22623 – 22630\nT 2020 Wiley-VCH GmbH\nwww.angewandte.org",
+    "crop_path": null,
+    "n_words": 15,
+    "is_boilerplate": false
+  },
+  {
+    "page": 4,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      578.1,
+      16.8,
+      585.6,
+      825.7
+    ],
+    "text": " 15213773, 2020, 50, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/anie.202009714 by ITMO University, Wiley Online Library on [26/06/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+    "crop_path": null,
+    "n_words": 38,
+    "is_boilerplate": false
+  },
+  {
+    "page": 4,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      50.9,
+      626.9,
+      292.1,
+      709.0
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p4_b7.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 4,
+    "candidate_type": "vector_candidate",
+    "bbox": [
+      -0.8,
+      -0.8,
+      596.1,
+      79.0
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p4_vec0.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 5,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      599.0,
+      290.6,
+      734.5
+    ],
+    "text": "optical propagation position is tuned, and the emission\nintensity and propagation distance of an individual NVP-\nTHA can be recorded. The intensity at the tip (Itip) of NVP-\nTHA gradually decreases with the excitation distance in-\ncreasing, wherein the intensity of excitation spot (Ibody) keeps\nconstant. The intensity ratio Itip/Ibody exhibits a nearly single-\nexponential decay trend dependent on the propagation\ndistance. The optical-loss coefficient R can be calculated by\nthe function: Itip/Ibody = Aexp(@RD), where D is the distance\nbetween the excited spot and the emitting tip. The optical-loss\ncoefficient R of NVP-THA is calculated to be 0.066 dBmm@1,\nwhich is comparable with current organic molecular crys-",
+    "crop_path": null,
+    "n_words": 108,
+    "is_boilerplate": false
+  },
+  {
+    "page": 5,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      54.8,
+      542.8,
+      90.5
+    ],
+    "text": "tals.[64–71] Such excellent optical waveguide properties are\nattributed to the high PLQY and good crystalline quality\nwithin the 1D microstructure.",
+    "crop_path": null,
+    "n_words": 20,
+    "is_boilerplate": false
+  },
+  {
+    "page": 5,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      93.0,
+      542.9,
+      309.0
+    ],
+    "text": "As observed in the crystal structure of NVP-THA along\na axis and PXRD profile, the NVP molecules are highly\norientated, indicating the 1D molecular material is extremely\nanisotropic. After excitation using UV-polarized light at\n365 nm, the NVP-THA co-crystal exhibits a well-defined\npolarized emission centered at 480 nm with its maximum\n(Imax) and minimum intensity (Imin) located at 458 and 1358,\nrespectively (Figure 5g and h). It is also observed that the two\nvertical 1D NVP-THA present obviously alternating bright\nand dark emissions at two typical polarized degrees (Fig-\nure 5d, e and f). This result suggests the rational combination\nof the two microstructures can serve as an efficient polarized\nfluorescent switch. The anisotropy value r is calculated as\n0.72, based on the formula r= (Imax@Imin)/(Imax + Imin). To the\nbest of our knowledge, this polarization anisotropy value is\nhigher than that of state-of-the-art 1D organic molecular\ncrystals.[72] It is expected that this high anisotropy endows the\nNVP-THA co-crystal with high potential for use as a polarized\nluminescent material.",
+    "crop_path": null,
+    "n_words": 169,
+    "is_boilerplate": false
+  },
+  {
+    "page": 5,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      311.5,
+      542.9,
+      654.0
+    ],
+    "text": "To probe the photoemission behavior with different\nexcitation modes, we also performed an up-conversion\nfluorescence test using excitation of the 1D NVP-THA co-\ncrystal with a long-wavelength femtosecond pulsed laser\n(Figure S21). Firstly, the two-photon absorption (TPA) cross\nsection of NVP-TA solution (10@5 molL@1) was detected, and\nthe TPA values are found in the range of 26.9–62.1 GM\n(1 GM = 10@50 cm4sphoton@1molecule@1) from 720 to 780 nm\n(Figures S20). The excitation-dependent up-conversion fluo-\nrescence experiment for NVP-THA were further conducted\nwith the typical excitation wavelengths (740, 760, 780, 800 and\n820 nm). Using excitation with a 740 nm laser light as an\nexample, NVP-THA exhibits strong up-conversion fluores-\ncence with maximum emission peaks at approximately\n485 nm, which is very close to the position under 365 nm\nUV light. Due to the centrosymmetric space group, there is\na lack of second harmonic generation effect for the co-crystal.\nMoreover, changing the excitation wavelength ranging from\n760 to 820 nm, the shape and position of the emission peak are\nalmost the same as those excited at 740 nm (Figure 5i and\nFigure S21). Moreover, the fluorescence intensity exhibits\na nearly linear relationship as increasing pump powers, with\nthe corresponding slopes of log(intensity) to log(excitation\npower) as 2.00, 1.92, 1.97, 1.94, 1.86 respectively. This\nillustrates the two-photon absorption facilitates up-conver-\nsion emission, and the photoemission intensity can be finely\ntuned by controlling the long-wavelength excitation. There-\nfore, the 1D NVP-THA microcrystal can function as a novel\nblue two-photon light-emitting material for potential non-\nlinear optical applications.",
+    "crop_path": null,
+    "n_words": 254,
+    "is_boilerplate": false
+  },
+  {
+    "page": 5,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      677.9,
+      354.2,
+      688.9
+    ],
+    "text": "Conclusion",
+    "crop_path": null,
+    "n_words": 1,
+    "is_boilerplate": false
+  },
+  {
+    "page": 5,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      702.5,
+      542.9,
+      734.5
+    ],
+    "text": "In conclusion, by manipulating the hydrogen-bonding\ninteractions of the isostructural co-crystals, the light-induced\ndynamic macro-scaled movement is either effectively tuned",
+    "crop_path": null,
+    "n_words": 20,
+    "is_boilerplate": false
+  },
+  {
+    "page": 5,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      51.9,
+      452.5,
+      289.0,
+      520.5
+    ],
+    "text": "Figure 5. a) The typical fluorescence micrographs images of individual\nNVP-THA under the excitation laser at different spots. b) The PL\nspectra collected from the tip of NVP-THA between the excitation spot\nand tip as the optical propagation distance increases. c) Fitting an\nexponential function curve based on Itip/Ibody and distance from the\nexcitation spot to the end to obtain optical-loss coefficient (R) of NVP-\nTHA. d)–f) Fluorescence microscope images of NVP-THA at different",
+    "crop_path": null,
+    "n_words": 74,
+    "is_boilerplate": false
+  },
+  {
+    "page": 5,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      522.5,
+      287.0,
+      590.5
+    ],
+    "text": "angles (458, 908, and 1358). g) Fluorescence intensity of the NVP-THA\nas a function of the polarizer rotation angle; h) Typical polarized\nfluorescence spectra of NVP-THA at different angles (458 and 1358).\ni) Up-conversion fluorescence spectra of NVP-THA excited by 800 nm\nlaser at different pump powers. Inset: Corresponding linear fitting\nrelationship in log(intensity) with increasing log(pump intensity) of\nNVP-THA.",
+    "crop_path": null,
+    "n_words": 60,
+    "is_boilerplate": false
+  },
+  {
+    "page": 5,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      18.4,
+      747.7,
+      542.8,
+      757.7
+    ],
+    "text": "22628\nwww.angewandte.org\nT 2020 Wiley-VCH GmbH\nAngew. Chem. Int. Ed. 2020, 59, 22623 – 22630",
+    "crop_path": null,
+    "n_words": 15,
+    "is_boilerplate": false
+  },
+  {
+    "page": 5,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      578.1,
+      16.8,
+      585.6,
+      825.7
+    ],
+    "text": " 15213773, 2020, 50, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/anie.202009714 by ITMO University, Wiley Online Library on [26/06/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+    "crop_path": null,
+    "n_words": 38,
+    "is_boilerplate": false
+  },
+  {
+    "page": 5,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      52.3,
+      59.8,
+      290.8,
+      445.2
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p5_b6.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 5,
+    "candidate_type": "vector_candidate",
+    "bbox": [
+      -0.8,
+      -0.8,
+      596.1,
+      47.6
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p5_vec0.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      58.5,
+      290.6,
+      366.5
+    ],
+    "text": "or restricted within the 1D molecular co-crystals. The NVP-\nTA exhibits notable photo-induced mechanical popping\nbehavior upon UV irradiation owing to the solid-state [2+2]\ncycloaddition. This is attributed to the strain created and\nreleased during the conversion from light to mechanical\nenergy. The advantages of rapid light-driven movement and\nthe visualization of the obviously changed fluorescence\nendow the molecular crystal with great potential for the\ndesign of high-performance actuators and two-mode UV\ndetection based on crystal engineering. In contrast, no\nphotosalient effect for the NVP-THA co-crystal was observed\nafter irradiation, owing to its deviation from SchmidtQs\ngeometric criteria and extra strong O@H···O hydrogen bonds\nbetween the THA units. Ultimately, these properties restrict\nthe ring addition of ethylene double bonds. Benefitting from\ntheir high stability without photo-bleaching, the NVP-THA\nco-crystals present novel micro/nano-sized photonic proper-\nties with high-performance polarized fluorescence, two-pho-\nton photoemission, and optical waveguide properties, as\na result from strong 1D anisotropy and well-defined crystal-\nline quality. Hence, hydrogen-bond organized isostructural\nco-crystallization provides a promising strategy to tune photo-\nmechanical and photophysical properties of molecular mate-\nrials through the selection of suitable building blocks. Using\nthis approach would open up a new way to develop other\nsimilar actuators and/or photonic materials towards more\neffective energy conversion.",
+    "crop_path": null,
+    "n_words": 207,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      390.7,
+      139.3,
+      401.7
+    ],
+    "text": "Acknowledgements",
+    "crop_path": null,
+    "n_words": 1,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      415.0,
+      290.6,
+      527.6
+    ],
+    "text": "This work was supported by the National Natural Science\nFoundation of China (Grant No. 21771021, 21822501, and\n22061130206), the Beijing Municipal Natural Science Funda-\ntion (JQ20003), the Newton Advanced Fellowship award\n(NAF\\R1\\201285), the Fok Ying-Tong Education Foundation\n(Grant No. 171008), the Beijing Nova Program (Grant No.\nxx2018115), the State Key Laboratory of Rare Earth Re-\nsources\nUtilization\n(RERU2019005),\nthe\nMeasurements\nFund of Beijing Normal University, and the Fundamental\nResearch Funds for the Central Universities.",
+    "crop_path": null,
+    "n_words": 74,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      551.8,
+      136.9,
+      562.8
+    ],
+    "text": "Conflict of interest",
+    "crop_path": null,
+    "n_words": 3,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      576.1,
+      220.2,
+      585.1
+    ],
+    "text": "The authors declare no conflict of interest.",
+    "crop_path": null,
+    "n_words": 7,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      600.5,
+      271.5,
+      621.0
+    ],
+    "text": "Keywords: energy conversion · fluorescence polarization ·\nhydrogen bonds · molecular crystals · optical waveguides",
+    "crop_path": null,
+    "n_words": 15,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      56.4,
+      656.3,
+      290.6,
+      664.3
+    ],
+    "text": "[1] Q. Yu, X. Yang, Y. Chen, K. Yu, J. Gao, Z. Liu, P. Cheng, Z.",
+    "crop_path": null,
+    "n_words": 16,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      56.4,
+      666.4,
+      290.6,
+      694.3
+    ],
+    "text": "Zhang, B. Aguila, S. Ma, Angew. Chem. Int. Ed. 2018, 57, 10192 –\n10196; Angew. Chem. 2018, 130, 10349 – 10353.\n[2] K. Malachowski, M. Jamal, Q. Jin, B. Polat, C. J. Morris, D. H.",
+    "crop_path": null,
+    "n_words": 35,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      56.4,
+      696.4,
+      290.6,
+      714.3
+    ],
+    "text": "Gracias, Nano Lett. 2014, 14, 4164 – 4170.\n[3] M. K. Panda, K. B. Pal, G. Raj, R. Jana, T. Moriwaki, G. D.",
+    "crop_path": null,
+    "n_words": 23,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      69.7,
+      716.4,
+      290.6,
+      734.4
+    ],
+    "text": "Mukherjee, B. Mukhopadhyay, P. Naumov, Cryst. Growth Des.\n2017, 17, 1759 – 1765.",
+    "crop_path": null,
+    "n_words": 13,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      308.7,
+      69.0,
+      542.8,
+      87.2
+    ],
+    "text": "Koumura, B. L. Feringa, Nature 2005, 437, 1337 – 1340.\n[5] J. Vachon, G. T. Carroll, M. M. Pollard, E. M. Mes, A. M.",
+    "crop_path": null,
+    "n_words": 24,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      308.7,
+      89.5,
+      542.8,
+      118.1
+    ],
+    "text": "Brouwer, B. L. Feringa, Photochem. Photobiol. Sci. 2014, 13,\n241 – 246.\n[6] a) Y. Duan, S. Semin, P. Tinnemans, H. Cuppen, J. Xu, T. Rasing,",
+    "crop_path": null,
+    "n_words": 26,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      308.7,
+      120.4,
+      542.8,
+      159.2
+    ],
+    "text": "Nat. Commun. 2019, 10, 4573; b) Y. Yang, X. Fang, S. S. Zhao, F.\nBai, Z. Zhao, K. Z. Wang, D. Yan, Chem. Commun. 2020, 56,\n5267 – 5270.\n[7] M. Dharmarwardana, R. P. Welch, S. Kwon, V. K. Nguyen, G. T.",
+    "crop_path": null,
+    "n_words": 42,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      308.7,
+      161.5,
+      542.9,
+      190.1
+    ],
+    "text": "McCandless, M. A. Omary, J. J. Gassensmith, Chem. Commun.\n2017, 53, 9890 – 9893.\n[8] R. Raia, B. P. Krishnana, K. M. Sureshan, Proc. Natl. Acad. Sci.",
+    "crop_path": null,
+    "n_words": 27,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      308.7,
+      192.4,
+      542.8,
+      210.6
+    ],
+    "text": "USA 2018, 115, 2896 – 2901.\n[9] K. B. Landenberger, O. Bolton, A. J. Matzger, Angew. Chem. Int.",
+    "crop_path": null,
+    "n_words": 18,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      212.9,
+      542.9,
+      231.2
+    ],
+    "text": "Ed. 2013, 52, 6468 – 6471; Angew. Chem. 2013, 125, 6596 – 6599.\n[10] E. Ahmed, P. D. Karothu, P. Naumov, Angew. Chem. Int. Ed.",
+    "crop_path": null,
+    "n_words": 25,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      233.5,
+      542.9,
+      251.8
+    ],
+    "text": "2018, 57, 8837 – 8846; Angew. Chem. 2018, 130, 8974 – 8984.\n[11] S. Saha, M. K. Mishra, C. M. Reddy, G. R. Desiraju, Acc. Chem.",
+    "crop_path": null,
+    "n_words": 26,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      254.1,
+      542.8,
+      272.3
+    ],
+    "text": "Res. 2018, 51, 2957 – 2967.\n[12] P. Commins, I. T. Desta, D. P. Karothu, M. K. Panda, P. Naumov,",
+    "crop_path": null,
+    "n_words": 20,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      274.6,
+      542.9,
+      292.9
+    ],
+    "text": "Chem. Commun. 2016, 52, 13941 – 13954.\n[13] P. Gupta, D. P. Karothu, E. Ahmed, P. Naumov, N. K. Nath,",
+    "crop_path": null,
+    "n_words": 20,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      295.1,
+      542.9,
+      323.7
+    ],
+    "text": "Angew. Chem. Int. Ed. 2018, 57, 8498 – 8502; Angew. Chem.\n2018, 130, 8634 – 8638.\n[14] a) S. Kobatake, S. Takami, H. Muto, T. Ishikawa, M. Irie, Nature",
+    "crop_path": null,
+    "n_words": 29,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      325.7,
+      542.9,
+      406.0
+    ],
+    "text": "2007, 446, 778; b) A. N. Sokolov, D. K. Bucˇar, J. Baltrusaitis,\nS. X. Gu, L. R. MacGillivray, Angew. Chem. Int. Ed. 2010, 49,\n4273 – 4277; Angew. Chem. 2010, 122, 4369 – 4373; c) E. Elacqua,\nP. Kaushik, R. H. Groeneman, J. C. Sumrak, D. K. Bucˇar, L. R.\nMacGillivray, Angew. Chem. Int. Ed. 2012, 51, 1037 – 1041;\nAngew. Chem. 2012, 124, 1061 – 1065; d) D. Yan, Chem. Eur. J.\n2015, 21, 4880 – 4896.\n[15] R. Medishetty, S. C. Sahoo, C. E. Mulijanto, P. Naumov, J. J.",
+    "crop_path": null,
+    "n_words": 91,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      408.3,
+      542.8,
+      426.6
+    ],
+    "text": "Vittal, Chem. Mater. 2015, 27, 1821 – 1829.\n[16] Q. Yu, B. Aguila, J. Gao, P. Xu, Q. Chen, J. Yan, D. Xing, Y.",
+    "crop_path": null,
+    "n_words": 24,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      428.9,
+      542.9,
+      457.4
+    ],
+    "text": "Chen, P. Cheng, Z. Zhang, S. Ma, Chem. Eur. J. 2019, 25, 5611 –\n5622.\n[17] Y. Yu, T. Maeda, J. I. Mamiya, T. Ikeda, Angew. Chem. Int. Ed.",
+    "crop_path": null,
+    "n_words": 29,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      459.7,
+      542.9,
+      478.0
+    ],
+    "text": "2007, 46, 881 – 883; Angew. Chem. 2007, 119, 899 – 901.\n[18] F. Terao, M. Morimoto, M. Irie, Angew. Chem. Int. Ed. 2012, 51,",
+    "crop_path": null,
+    "n_words": 25,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      480.3,
+      542.9,
+      498.6
+    ],
+    "text": "901 – 904; Angew. Chem. 2012, 124, 925 – 928.\n[19] L. Zhu, R. O. Al-Kaysi, R. J. Dillon, F. S. Tham, C. J. Bardeen,",
+    "crop_path": null,
+    "n_words": 25,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      500.8,
+      542.9,
+      519.2
+    ],
+    "text": "Cryst. Growth Des. 2011, 11, 4975 – 4983.\n[20] D. Kitagawa, H. Tsujioka, F. Tong, X. Dong, C. J. Bardeen, S.",
+    "crop_path": null,
+    "n_words": 21,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      521.4,
+      542.8,
+      539.7
+    ],
+    "text": "Kobatake, J. Am. Chem. Soc. 2018, 140, 4208 – 4212.\n[21] R. Mandal, A. Garai, S. Peli, P. K. Datta, K. Biradha, Chem. Eur.",
+    "crop_path": null,
+    "n_words": 24,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      542.0,
+      542.9,
+      560.2
+    ],
+    "text": "J. 2020, 26, 396 – 400.\n[22] H. Koshima, H. Uchimoto, T. Taniguchi, J. Nakamura, T. Asahib,",
+    "crop_path": null,
+    "n_words": 17,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      562.6,
+      542.9,
+      580.8
+    ],
+    "text": "T. Asahia, CrystEngComm 2016, 18, 7305 – 7310.\n[23] J. Peng, J. Y. Zhao, K. Q. Ye, H. Q. Gao, J. B. Sun, R. Lu, Chem.",
+    "crop_path": null,
+    "n_words": 26,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      583.1,
+      542.8,
+      601.4
+    ],
+    "text": "Asian J. 2018, 13, 1719 – 1724.\n[24] F. Tonga, M. Al-Haidarb, L. Zhua, R. O. Al-Kaysib, C. J.",
+    "crop_path": null,
+    "n_words": 19,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      603.7,
+      542.9,
+      622.0
+    ],
+    "text": "Bardeena, Chem. Commun. 2019, 55, 3709 – 3712.\n[25] H. Qin, T. Zhang, N. Li, H. P. Cong, S. H. Yu, Nat. Commun.",
+    "crop_path": null,
+    "n_words": 23,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      624.2,
+      542.9,
+      642.5
+    ],
+    "text": "2019, 10, 2202.\n[26] Z. C. Jiang, Y. Y. Xiao, X. Tong, Y. Zhao, Angew. Chem. Int. Ed.",
+    "crop_path": null,
+    "n_words": 18,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      644.8,
+      542.8,
+      673.4
+    ],
+    "text": "2019, 58, 5332 – 5337; Angew. Chem. 2019, 131, 5386 – 5391.\n[27] Y. Yu, M. Nakano, T. Ikeda, Nature 2003, 425, 145.\n[28] a) M. Garai, R. Santra, K. Biradha, Angew. Chem. Int. Ed. 2013,",
+    "crop_path": null,
+    "n_words": 36,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      675.7,
+      542.9,
+      714.5
+    ],
+    "text": "52, 5548 – 5551; Angew. Chem. 2013, 125, 5658 – 5661; b) B.\nZhou, Q. Zhao, L. Tang, D. Yan, Chem. Commun. 2020, 56,\n7698 – 7701.\n[29] O. S. Bushuyev, T. A. Singleton, C. J. Barrett, Adv. Mater. 2013,",
+    "crop_path": null,
+    "n_words": 40,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      322.0,
+      716.8,
+      375.0,
+      724.8
+    ],
+    "text": "25, 1796 – 1800.",
+    "crop_path": null,
+    "n_words": 4,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      747.7,
+      576.8,
+      757.7
+    ],
+    "text": "22629\nAngew. Chem. Int. Ed. 2020, 59, 22623 – 22630\nT 2020 Wiley-VCH GmbH\nwww.angewandte.org",
+    "crop_path": null,
+    "n_words": 15,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      578.1,
+      16.8,
+      585.6,
+      825.7
+    ],
+    "text": " 15213773, 2020, 50, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/anie.202009714 by ITMO University, Wiley Online Library on [26/06/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+    "crop_path": null,
+    "n_words": 38,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "vector_candidate",
+    "bbox": [
+      -0.8,
+      -0.8,
+      596.1,
+      66.6
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p6_vec0.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      68.7,
+      290.6,
+      96.7
+    ],
+    "text": "Halabi, S. Schramm, J. Weston, R. Rezgui, P. Naumov, Chem.\nSci. 2019, 10, 7327 – 7332.\n[31] M. Morimoto, M. Irie, J. Am. Chem. Soc. 2010, 132, 14172 –",
+    "crop_path": null,
+    "n_words": 29,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      98.6,
+      290.6,
+      116.6
+    ],
+    "text": "14178.\n[32] G. R. Krishna, R. Devarapalli, G. Lal, C. M. Reddy, J. Am.",
+    "crop_path": null,
+    "n_words": 14,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      118.7,
+      290.6,
+      136.6
+    ],
+    "text": "Chem. Soc. 2016, 138, 13561 – 13567.\n[33] a) D. Yan, D. G. Evans, Mater. Horiz. 2014, 1, 46 – 57; b) S.",
+    "crop_path": null,
+    "n_words": 23,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      138.7,
+      290.6,
+      276.7
+    ],
+    "text": "Aitipamula, R. Banerjee, A. K. Bansal, K. Biradha, M. L.\nCheney, A. R. Choudhury, G. R. Desiraju, A. G. Dikundwar,\nR. Dubey, N. Duggirala, P. P. Ghogale, S. Ghosh, P. K. Goswami,\nN. R. Goud, R. R. K. R. Jetti, P. Karpinski, P. Kaushik, D.\nKumar, V. Kumar, B. Moulton, A. Mukherjee, G. Mukherjee,\nA. S. Myerson, V. Puri, A. Ramanan, T. Rajamannar, C. M.\nReddy, N. Rodriguez Hornedo, R. D. Rogers, T. N. G. Row, P.\nSanphui, N. Shan, G. Shete, A. Singh, C. C. Sun, J. A. Swift, R.\nThaimattam, T. S. Thakur, R. K. Thaper, S. P. Thomas, S.\nTothadi, V. R. Vangala, N. Variankaval, P. Vishweshwar, D. R.\nWeyna, M. J. Zaworotko, Cryst. Growth Des. 2012, 12, 2147 –\n2152.\n[34] K. M. Steed, J. W. Steed, Chem. Rev. 2015, 115, 2895 – 2933.\n[35] D. Dai, Z. Li, J. Yang, C. Wang, J. R. Wu, Y. Wang, D. Zhang,",
+    "crop_path": null,
+    "n_words": 154,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      278.6,
+      290.6,
+      296.6
+    ],
+    "text": "Y. W. Yang, J. Am. Chem. Soc. 2019, 141, 4756 – 4763.\n[36] M. Paul, G. R. Desiraju, Angew. Chem. Int. Ed. 2019, 58, 12027 –",
+    "crop_path": null,
+    "n_words": 26,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      298.7,
+      290.6,
+      316.6
+    ],
+    "text": "12031; Angew. Chem. 2019, 131, 12155 – 12159.\n[37] a) D. K. Bucˇar, L. R. MacGillivray, J. Am. Chem. Soc. 2007, 129,",
+    "crop_path": null,
+    "n_words": 22,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      318.7,
+      290.6,
+      336.7
+    ],
+    "text": "32 – 33; b) B. Zhou, D. Yan, Sci. China Chem. 2020, 63, 423 – 425.\n[38] D. Yan, A. Delori, G. O. Lloyd, T. Frisˇcˇic´, G. M. Day, W. Jones, J.",
+    "crop_path": null,
+    "n_words": 32,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      338.6,
+      290.6,
+      366.6
+    ],
+    "text": "Lu, M. Wei, D. G. Evans, X. Duan, Angew. Chem. Int. Ed. 2011,\n50, 12483 – 12486; Angew. Chem. 2011, 123, 12691 – 12694.\n[39] N. Song, X. Y. Lou, H. Yu, P. S. Weiss, B. Z. Tang, Y. W. Yang,",
+    "crop_path": null,
+    "n_words": 41,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      368.7,
+      290.6,
+      386.7
+    ],
+    "text": "Mater. Chem. Front. 2020, 4, 950 – 956.\n[40] L. Sun, W. Hua, Y. Liu, G. Tian, M. Chen, M. Chen, F. Yang, S.",
+    "crop_path": null,
+    "n_words": 24,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      388.6,
+      290.6,
+      416.7
+    ],
+    "text": "Wang, X. Zhang, Y. Luo, W. Hu, Angew. Chem. Int. Ed. 2019, 58,\n11311 – 11316; Angew. Chem. 2019, 131, 11433 – 11438.\n[41] M. P. Zhuo, J. J. Wu, X. D. Wang, Y. C. Tao, Y. Yuan, L. S. Liao,",
+    "crop_path": null,
+    "n_words": 41,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      418.7,
+      290.6,
+      436.7
+    ],
+    "text": "Nat. Commun. 2019, 10, 3839.\n[42] O. S. Bushuyev, T. C. Corkery, C. J. Barrett, T. Frisˇcˇic´, Chem. Sci.",
+    "crop_path": null,
+    "n_words": 19,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      438.6,
+      290.6,
+      456.7
+    ],
+    "text": "2014, 5, 3158 – 3164.\n[43] L. Sun, Y. Wang, F. Yang, X. Zhang, W. Hu, Adv. Mater. 2019, 31,",
+    "crop_path": null,
+    "n_words": 20,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      458.7,
+      290.6,
+      476.6
+    ],
+    "text": "1902328.\n[44] J. Park, S. H. Joo, Y. J. Kim, J. H. Park, S. K. Kwak, S. Ahn, S. J.",
+    "crop_path": null,
+    "n_words": 20,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      478.7,
+      290.6,
+      506.7
+    ],
+    "text": "Kang, Adv. Funct. Mater. 2019, 29, 1902888.\n[45] B. Zhou, D. Yan, Adv. Funct. Mater. 2019, 29, 1807599.\n[46] S. Ghosh, C. M. Reddy, Angew. Chem. Int. Ed. 2012, 51, 10319 –",
+    "crop_path": null,
+    "n_words": 32,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      508.7,
+      290.6,
+      526.6
+    ],
+    "text": "10323; Angew. Chem. 2012, 124, 10465 – 10469.\n[47] T. P. Rupasinghe, K. M. Hutchins, B. S. Bandaranayake, S.",
+    "crop_path": null,
+    "n_words": 19,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      528.7,
+      290.6,
+      566.7
+    ],
+    "text": "Ghorai, C. Karunatilake, D. K. Bucar, D. C. Swenson, M. A.\nArnold, L. R. MacGillivray, A. V. Tivanski, J. Am. Chem. Soc.\n2015, 137, 12768 – 12771.\n[48] L. Bai, P. Bose, Q. Gao, Y. Li, R. Ganguly, Y. Zhao, J. Am. Chem.",
+    "crop_path": null,
+    "n_words": 43,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.5,
+      568.6,
+      290.6,
+      586.7
+    ],
+    "text": "Soc. 2017, 139, 436 – 441.\n[49] C. Karunatilaka, D. K. Bucˇar, L. R. Ditzler, T. Frisˇcˇic´, D. C.",
+    "crop_path": null,
+    "n_words": 19,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      588.7,
+      290.6,
+      616.7
+    ],
+    "text": "Swenson, L. R. MacGillivray, A. V. Tivanski, Angew. Chem. Int.\nEd. 2011, 50, 8642 – 8646; Angew. Chem. 2011, 123, 8801 – 8805.\n[50] Y. Liu, H. Hu, L. Xu, B. Qiu, J. Liang, F. Ding, K. Wang, M. Chu,",
+    "crop_path": null,
+    "n_words": 40,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      618.6,
+      290.6,
+      656.6
+    ],
+    "text": "W. Zhang, M. Ma, B. Chen, X. Yang, Y. S. Zhao, Angew. Chem.\nInt. Ed. 2020, 59, 4456 – 4463; Angew. Chem. 2020, 132, 4486 –\n4493.\n[51] X. G. Yang, Z. M. Zhai, X. M. Lu, L. F. Ma, D. Yan, ACS Cent.",
+    "crop_path": null,
+    "n_words": 44,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      658.7,
+      290.5,
+      676.6
+    ],
+    "text": "Sci. 2020, 6, 1169 – 1178.\n[52] S. Li, D. Yan, ACS Appl. Mater. Interfaces 2018, 10, 22703 –",
+    "crop_path": null,
+    "n_words": 19,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      52.4,
+      678.7,
+      290.6,
+      696.7
+    ],
+    "text": "22710.\n[53] W. Zhu, L. Zhu, Y. Zou, Y. Wu, Y. Zhen, H. Dong, H. Fu, Z. Wei,",
+    "crop_path": null,
+    "n_words": 18,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      69.7,
+      698.6,
+      238.9,
+      706.6
+    ],
+    "text": "Q. Shi, W. Hu, Adv. Mater. 2016, 28, 5954 – 5962.",
+    "crop_path": null,
+    "n_words": 11,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      68.7,
+      542.9,
+      136.6
+    ],
+    "text": "815; b) K. Yadava, G. Gallo, S. Bette, C. E. Mulijanto, D. P.\nKarothu, I. K. Park, R. Medishetty, P. Naumov, R. E. Dinne-\nbierb, J. J. Vitta, IUCrJ 2020, 7, 83 – 89; c) R. Medishetty, A.\nHusain, Z. Bai, T. Runcˇevski, R. E. Dinnebier, P. Naumov, J. J.\nVittal, Angew. Chem. Int. Ed. 2014, 53, 5907 – 5911; Angew.\nChem. 2014, 126, 6017 – 6021.\n[55] a) H. Wang, P. Chen, Z. Wu, J. Zhao, J. Sun, R. Lu, Angew.",
+    "crop_path": null,
+    "n_words": 82,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      138.7,
+      542.9,
+      206.7
+    ],
+    "text": "Chem. Int. Ed. 2017, 56, 9463 – 9467; Angew. Chem. 2017, 129,\n9591 – 9595; b) P. Commins, A. Natarajan, C. K. Tsai, S. I. Khan,\nN. K. Nath, P. Naumov, M. A. Garcia-Garibay, Cryst. Growth\nDes. 2015, 15, 1983 – 1990; c) P. Naumov, S. C. Sahoo, B. A.\nZakharov, E. V. Boldyreva, Angew. Chem. Int. Ed. 2013, 52,\n9990 – 9995; Angew. Chem. 2013, 125, 10174 – 10179.\n[56] N. K. Nath, T. Runcˇevski, C. Y. Lai, M. Chiesa, R. E. Dinnebier,",
+    "crop_path": null,
+    "n_words": 84,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      208.6,
+      542.9,
+      226.7
+    ],
+    "text": "P. Naumov, J. Am. Chem. Soc. 2015, 137, 13866 – 13875.\n[57] J. K. Sun, W. Li, C. Chen, C. X. Ren, D. M. Pan, J. Zhang, Angew.",
+    "crop_path": null,
+    "n_words": 28,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      228.6,
+      542.9,
+      256.7
+    ],
+    "text": "Chem. Int. Ed. 2013, 52, 6653 – 6657; Angew. Chem. 2013, 125,\n6785 – 6789.\n[58] D. K. Bucˇar, J. A. Elliott, M. D. Eddleston, J. K. Cockcroft, W.",
+    "crop_path": null,
+    "n_words": 29,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      258.6,
+      542.9,
+      296.6
+    ],
+    "text": "Jones, Angew. Chem. Int. Ed. 2015, 54, 249 – 253; Angew. Chem.\n2015, 127, 251 – 255.\n[59] G. M. J. Schmidt, Pure Appl. Chem. 1971, 27, 647 – 678.\n[60] S. Anderson, P. Boyd, A. Gładysiak, T. N. Nguyen, R. G.",
+    "crop_path": null,
+    "n_words": 42,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      298.7,
+      542.8,
+      326.7
+    ],
+    "text": "Palgrave, D. Kubicki, L. Emsley, D. Bradshaw, M. J. Rosseinsky,\nB. Smit, K. C. Stylianou, Nat. Commun. 2019, 10, 1612.\n[61] a) I. G. Georgiev, L. R. MacGillivray, Chem. Soc. Rev. 2007, 36,",
+    "crop_path": null,
+    "n_words": 33,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      328.7,
+      542.9,
+      376.7
+    ],
+    "text": "1239 – 1248; b) K. Biradha, R. Santra, Chem. Soc. Rev. 2013, 42,\n950 – 967; c) See Ref. [55a]; d) M. Nagarathinam, A. M. P. Pee-\ndikakkal, J. J. Vittal, Chem. Commun. 2008, 5277 – 5288; e) V.\nRamamurthy, K. Venkatesan, Chem. Rev. 1987, 87, 433 – 481.\n[62] a) H. Li, L. Zhang, N. Petrutik, K. Wang, Q. Ma, D. S. Tov, F.",
+    "crop_path": null,
+    "n_words": 65,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      378.7,
+      542.9,
+      426.7
+    ],
+    "text": "Zhao, M. Gozin, ACS Cent. Sci. 2020, 6, 54 – 75; b) M. J. Turner,\nJ. J. MacKinnon, S. K. Wolff, D. J. Grimwood, P. R. Spackman,\nD. Jayatilaka, M. A. Spackma, Crystal Explorer Ver. 17.5,\nUniversity of Western Australia, 2017.\n[63] M. A. Spackman, D. Jayatilaka, CrystEngComm 2009, 11, 19 –",
+    "crop_path": null,
+    "n_words": 52,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      428.7,
+      542.8,
+      446.6
+    ],
+    "text": "32.\n[64] W. Zhu, R. Zheng, X. Fu, H. Fu, Q. Shi, Y. Zhen, H. Dong, W.",
+    "crop_path": null,
+    "n_words": 17,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      448.7,
+      542.9,
+      476.6
+    ],
+    "text": "Hu, Angew. Chem. Int. Ed. 2015, 54, 6785 – 6789; Angew. Chem.\n2015, 127, 6889 – 6893.\n[65] H. Liu, Z. Bian, Q. Cheng, L. Lan, Y. Wang, H. Zhang, Chem.",
+    "crop_path": null,
+    "n_words": 31,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      478.7,
+      542.8,
+      496.6
+    ],
+    "text": "Sci. 2019, 10, 227 – 232.\n[66] J. Wang, S. Zhang, S. Xu, A. Li, B. Li, L. Ye, Y. Geng, Y. Tian, W.",
+    "crop_path": null,
+    "n_words": 24,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      498.7,
+      542.8,
+      516.7
+    ],
+    "text": "Xu, Adv. Opt. Mater. 2020, 8, 1901280.\n[67] M. P. Zhuo, X. Y. Fei, Y. C. Tao, J. Fan, X. D. Wang, W. F. Xie,",
+    "crop_path": null,
+    "n_words": 25,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      518.6,
+      542.9,
+      536.7
+    ],
+    "text": "L. S. Liao, ACS Appl. Mater. Interfaces 2019, 11, 5298 – 5305.\n[68] M. L. Pan, C. Wang, M. P. Zhou, Z. Z. Li, Y. Yuan, Y. C. Tao,",
+    "crop_path": null,
+    "n_words": 29,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      538.6,
+      542.9,
+      556.7
+    ],
+    "text": "X. D. Wang, ACS Mater. Lett. 2020, 2, 658 – 664.\n[69] B. Zhou, D. Yan, Angew. Chem. Int. Ed. 2019, 58, 15128 – 15135;",
+    "crop_path": null,
+    "n_words": 25,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      558.7,
+      542.8,
+      576.6
+    ],
+    "text": "Angew. Chem. 2019, 131, 15272 – 15279.\n[70] X. Yang, X. Lin, Y. Zhao, Y. S. Zhao, D. Yan, Angew. Chem. Int.",
+    "crop_path": null,
+    "n_words": 22,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      578.7,
+      542.9,
+      606.7
+    ],
+    "text": "Ed. 2017, 56, 7853 – 7857; Angew. Chem. 2017, 129, 7961 – 7965.\n[71] X. Yang, L. Ma, D. Yan, Chem. Sci. 2019, 10, 4567.\n[72] a) D. Yan, H. Yang, Q. Meng, H. Lin, M. Wei, Adv. Funct. Mater.",
+    "crop_path": null,
+    "n_words": 40,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      322.0,
+      608.7,
+      542.9,
+      636.7
+    ],
+    "text": "2014, 24, 587 – 594; b) G. Fan, D. Yan, Adv. Opt. Mater. 2016, 4,\n2139 – 2147; c) B. Lu, X. Fang, D. Yan, ACS Appl. Mater.\nInterfaces 2020, 12, 31940 – 31951.",
+    "crop_path": null,
+    "n_words": 34,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      304.7,
+      678.7,
+      472.9,
+      706.6
+    ],
+    "text": "Manuscript received: July 14, 2020\nAccepted manuscript online: September 1, 2020\nVersion of record online: October 6, 2020",
+    "crop_path": null,
+    "n_words": 18,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      18.4,
+      747.7,
+      542.8,
+      757.7
+    ],
+    "text": "22630\nwww.angewandte.org\nT 2020 Wiley-VCH GmbH\nAngew. Chem. Int. Ed. 2020, 59, 22623 – 22630",
+    "crop_path": null,
+    "n_words": 15,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      578.1,
+      16.8,
+      585.6,
+      825.7
+    ],
+    "text": " 15213773, 2020, 50, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/anie.202009714 by ITMO University, Wiley Online Library on [26/06/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+    "crop_path": null,
+    "n_words": 38,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "vector_candidate",
+    "bbox": [
+      -0.8,
+      -0.8,
+      596.1,
+      66.6
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_10.1002_anie.202009714_crystal\\crops\\p7_vec0.png",
+    "n_words": null,
+    "is_boilerplate": false
+  }
+]

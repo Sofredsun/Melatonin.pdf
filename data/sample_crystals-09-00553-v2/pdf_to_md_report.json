@@ -1,0 +1,8 @@
+{
+  "expected_image_refs_from_candidates_json": 31,
+  "actual_image_refs_in_md": 31,
+  "table_like_lines_in_md": 14,
+  "md_char_count": 34569,
+  "leftover_picture_noise": false,
+  "warning": null
+}

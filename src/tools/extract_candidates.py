@@ -74,6 +74,64 @@ def _merge_overlapping_rects(rects: list[fitz.Rect], pad: float = 4.0) -> list[f
     return rects
 
 
+def _merge_adjacent_blocks(
+    items: list[tuple[str, tuple]], edge_tol: float = 1.5, length_tol: float = 1.5
+) -> list[tuple[str, tuple]]:
+    """
+    items: список (тег, bbox) для растровых блоков ОДНОЙ страницы.
+
+    Склеивает два блока, если они стыкуются ровно по одной общей стороне:
+      - один заканчивается там, где начинается другой (с точностью edge_tol) -
+        это "угол совпадает"
+      - и совпадает длина по перпендикулярной стороне (с точностью length_tol) -
+        это "и длина одинаковая", иначе случайное касание уголками двух
+        совершенно разных картинок тоже считалось бы стыком.
+
+    Проверяются оба направления стыка - по вертикали (одна картинка под
+    другой, совпадает левый/правый край) и по горизонтали (одна картинка
+    справа от другой, совпадает верх/низ) - PyMuPDF режет крупный растровый
+    рисунок на полосы и так, и так, в зависимости от PDF.
+
+    Итеративно (while changed) - чтобы склеить цепочку из многих полос
+    подряд, а не только одну пару за раз.
+    """
+    blocks: list[tuple[str, list] | None] = [(tag, list(bbox)) for tag, bbox in items]
+    changed = True
+    while changed:
+        changed = False
+        for i in range(len(blocks)):
+            if blocks[i] is None:
+                continue
+            tag_a, a = blocks[i]
+            for j in range(i + 1, len(blocks)):
+                if blocks[j] is None:
+                    continue
+                tag_b, b = blocks[j]
+
+                # стык по вертикали: одна картинка под другой - совпадает
+                # левый и правый край (это и есть "длина" по X), низ верхней
+                # картинки касается верха нижней
+                same_x = abs(a[0] - b[0]) <= length_tol and abs(a[2] - b[2]) <= length_tol
+                touch_y = abs(a[3] - b[1]) <= edge_tol or abs(b[3] - a[1]) <= edge_tol
+
+                # стык по горизонтали: одна картинка справа от другой -
+                # совпадает верхний и нижний край, правый край левой
+                # картинки касается левого края правой
+                same_y = abs(a[1] - b[1]) <= length_tol and abs(a[3] - b[3]) <= length_tol
+                touch_x = abs(a[2] - b[0]) <= edge_tol or abs(b[2] - a[0]) <= edge_tol
+
+                if (same_x and touch_y) or (same_y and touch_x):
+                    merged = [min(a[0], b[0]), min(a[1], b[1]),
+                              max(a[2], b[2]), max(a[3], b[3])]
+                    blocks[i] = (tag_a, merged)
+                    blocks[j] = None
+                    changed = True
+                    break
+            if changed:
+                break
+    return [(tag, tuple(bb)) for tag, bb in (item for item in blocks if item is not None)]
+
+
 def _is_probably_table_like(text: str) -> bool:
     """
     Грубая эвристика: если в текстовом блоке много коротких "ячеек"
@@ -116,6 +174,11 @@ def extract_candidates(pdf_path: str, out_dir: str, zoom: float = 3.0) -> list[C
     for page_idx, page in enumerate(doc):
         blocks = page.get_text("dict")["blocks"]
 
+        # type==1 блоки откладываем - сначала только bbox, без рендера,
+        # чтобы успеть склеить полосы по углу+длине ДО того, как они лягут
+        # на диск как отдельные файлы
+        raw_image_blocks: list[tuple[str, tuple]] = []
+
         for b_idx, block in enumerate(blocks):
             bbox = tuple(round(v, 1) for v in block["bbox"])
 
@@ -137,28 +200,15 @@ def extract_candidates(pdf_path: str, out_dir: str, zoom: float = 3.0) -> list[C
                     )
                 )
 
-            elif block["type"] == 1:  # изображение/вектор-блок
-                crop_path = os.path.join(
-                    out_dir, f"p{page_idx}_b{b_idx}.png"
-                )
-                mat = fitz.Matrix(zoom, zoom)
-                pix = page.get_pixmap(matrix=mat, clip=fitz.Rect(bbox))
-                pix.save(crop_path)
-                candidates.append(
-                    Candidate(
-                        page=page_idx,
-                        candidate_type="image_candidate",
-                        bbox=bbox,
-                        crop_path=crop_path,
-                        is_boilerplate=_is_probably_boilerplate(bbox, page, page_idx, n_pages),
-                    )
-                )
+            elif block["type"] == 1:  # изображение/вектор-блок - откладываем
+                raw_image_blocks.append((f"b{b_idx}", bbox))
 
-        # embedded images через get_images (с дедупом против блоков выше)
-        page_img_bboxes = [
-            c.bbox for c in candidates
-            if c.page == page_idx and c.candidate_type == "image_candidate"
-        ]
+        # embedded images через get_images - дедуп НА УРОВНЕ ИСХОДНЫХ
+        # (ещё не склеенных) блоков. Если сравнивать с уже склеенным bbox,
+        # IoU маленькой полоски против большого объединённого прямоугольника
+        # всегда низкий и дедуп не сработает - поэтому дедуп идёт раньше склейки.
+        raw_image_bboxes = [bbox for _, bbox in raw_image_blocks]
+        embedded_blocks: list[tuple[str, tuple]] = []
         for img_idx, img in enumerate(page.get_images(full=True)):
             xref = img[0]
             try:
@@ -167,22 +217,29 @@ def extract_candidates(pdf_path: str, out_dir: str, zoom: float = 3.0) -> list[C
                 rects = []
             for r in rects:
                 bbox = tuple(round(v, 1) for v in r)
-                if any(_bbox_iou(bbox, e) > 0.85 for e in page_img_bboxes):
+                if any(_bbox_iou(bbox, e) > 0.85 for e in raw_image_bboxes):
                     continue  # тот же объект уже пришёл из get_text("dict")
-                crop_path = os.path.join(out_dir, f"p{page_idx}_embimg{img_idx}.png")
-                mat = fitz.Matrix(zoom, zoom)
-                pix = page.get_pixmap(matrix=mat, clip=r)
-                pix.save(crop_path)
-                candidates.append(
-                    Candidate(
-                        page=page_idx,
-                        candidate_type="image_candidate",
-                        bbox=bbox,
-                        crop_path=crop_path,
-                        is_boilerplate=_is_probably_boilerplate(bbox, page, page_idx, n_pages),
-                    )
+                embedded_blocks.append((f"embimg{img_idx}", bbox))
+
+        # склейка по совпадению угла+длины (см. _merge_adjacent_blocks) -
+        # и type==1, и embedded вместе, т.к. картинка может прийти любым путём
+        merged_image_blocks = _merge_adjacent_blocks(raw_image_blocks + embedded_blocks)
+
+        # теперь рендерим - один раз на каждый итоговый (возможно склеенный) блок
+        for tag, bbox in merged_image_blocks:
+            crop_path = os.path.join(out_dir, f"p{page_idx}_{tag}.png")
+            mat = fitz.Matrix(zoom, zoom)
+            pix = page.get_pixmap(matrix=mat, clip=fitz.Rect(bbox))
+            pix.save(crop_path)
+            candidates.append(
+                Candidate(
+                    page=page_idx,
+                    candidate_type="image_candidate",
+                    bbox=bbox,
+                    crop_path=crop_path,
+                    is_boilerplate=_is_probably_boilerplate(bbox, page, page_idx, n_pages),
                 )
-                page_img_bboxes.append(bbox)
+            )
 
         # векторная графика (структуры/схемы, нарисованные линиями)
         drawing_rects = [d["rect"] for d in page.get_drawings() if not d["rect"].is_empty]
@@ -229,28 +286,21 @@ def extract_candidates(pdf_path: str, out_dir: str, zoom: float = 3.0) -> list[C
     return candidates
 
 
-if __name__ == "__main__":
-    import sys
-
-    PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-
-    default_pdf = PROJECT_ROOT / "data" / "crystals-09-00553-v2.pdf"
-    out_dir = PROJECT_ROOT / "data" / "sample" / "crops"
-    out_json = PROJECT_ROOT / "data" / "sample" / "candidates.json"
-
-    if len(sys.argv) > 1:
-        pdf_path = Path(sys.argv[1])
-        if not pdf_path.is_absolute():
-            pdf_path = PROJECT_ROOT / pdf_path
-    else:
-        pdf_path = default_pdf
-
-    if not pdf_path.exists():
-        raise FileNotFoundError(f"PDF файл не найден по пути: {pdf_path}")
+def _process_one_pdf(pdf_path: Path, project_root: Path) -> None:
+    """
+    Запускает extract_candidates на одном PDF и сохраняет результат в
+    отдельную папку data/sample_<имя файла без .pdf>/ (crops/ + candidates.json) -
+    чтобы результаты разных статей не перезатирали друг друга в общей
+    data/sample/, как было раньше при одном захардкоженном пути.
+    """
+    out_root = project_root / "data" / f"sample_{pdf_path.stem}"
+    out_dir = out_root / "crops"
+    out_json = out_root / "candidates.json"
 
     os.makedirs(out_dir, exist_ok=True)
     os.makedirs(out_json.parent, exist_ok=True)
 
+    print(f"=== {pdf_path.name} ===")
     candidates = extract_candidates(str(pdf_path), str(out_dir))
 
     print(f"Найдено кандидатов: {len(candidates)}")
@@ -264,4 +314,26 @@ if __name__ == "__main__":
 
     with open(out_json, "w", encoding="utf-8") as f:
         json.dump([asdict(c) for c in candidates], f, ensure_ascii=False, indent=2)
-    print(f"Сохранено в {out_json}")
+    print(f"Сохранено в {out_json}\n")
+
+
+if __name__ == "__main__":
+    import sys
+
+    PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+    data_dir = PROJECT_ROOT / "data"
+
+    if len(sys.argv) > 1:
+        pdf_path = Path(sys.argv[1])
+        if not pdf_path.is_absolute():
+            pdf_path = PROJECT_ROOT / pdf_path
+        if not pdf_path.exists():
+            raise FileNotFoundError(f"PDF файл не найден по пути: {pdf_path}")
+        _process_one_pdf(pdf_path, PROJECT_ROOT)
+    else:
+        pdf_paths = sorted(data_dir.glob("*.pdf"))
+        if not pdf_paths:
+            raise FileNotFoundError(f"В папке {data_dir} не найдено ни одного .pdf")
+        print(f"Найдено PDF в {data_dir}: {len(pdf_paths)}\n")
+        for pdf_path in pdf_paths:
+            _process_one_pdf(pdf_path, PROJECT_ROOT)

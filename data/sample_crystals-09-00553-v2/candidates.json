@@ -15,62 +15,6 @@
   },
   {
     "page": 0,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      476.4,
-      55.1,
-      517.9,
-      82.5
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p0_b1.png",
-    "n_words": null,
-    "is_boilerplate": true
-  },
-  {
-    "page": 0,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      480.8,
-      64.4,
-      513.4,
-      73.6
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p0_b2.png",
-    "n_words": null,
-    "is_boilerplate": true
-  },
-  {
-    "page": 0,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      496.6,
-      62.4,
-      517.8,
-      82.5
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p0_b3.png",
-    "n_words": null,
-    "is_boilerplate": true
-  },
-  {
-    "page": 0,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      476.6,
-      55.3,
-      497.8,
-      75.5
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p0_b4.png",
-    "n_words": null,
-    "is_boilerplate": true
-  },
-  {
-    "page": 0,
     "candidate_type": "text_candidate",
     "bbox": [
       76.2,
@@ -197,6 +141,62 @@
   },
   {
     "page": 0,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      476.4,
+      55.1,
+      517.9,
+      82.5
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p0_b1.png",
+    "n_words": null,
+    "is_boilerplate": true
+  },
+  {
+    "page": 0,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      480.8,
+      64.4,
+      513.4,
+      73.6
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p0_b2.png",
+    "n_words": null,
+    "is_boilerplate": true
+  },
+  {
+    "page": 0,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      496.6,
+      62.4,
+      517.8,
+      82.5
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p0_b3.png",
+    "n_words": null,
+    "is_boilerplate": true
+  },
+  {
+    "page": 0,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      476.6,
+      55.3,
+      497.8,
+      75.5
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p0_b4.png",
+    "n_words": null,
+    "is_boilerplate": true
+  },
+  {
+    "page": 0,
     "candidate_type": "vector_candidate",
     "bbox": [
       76.5,
@@ -205,7 +205,7 @@
       83.3
     ],
     "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p0_vec0.png",
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p0_vec0.png",
     "n_words": null,
     "is_boilerplate": true
   },
@@ -219,7 +219,7 @@
       379.6
     ],
     "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p0_vec1.png",
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p0_vec1.png",
     "n_words": null,
     "is_boilerplate": false
   },
@@ -337,174 +337,6 @@
   },
   {
     "page": 1,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      137.3,
-      664.9,
-      144.0,
-      701.4
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_b13.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 1,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      165.9,
-      665.0,
-      176.9,
-      701.4
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_b14.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 1,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      176.9,
-      665.0,
-      178.4,
-      701.4
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_b15.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 1,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      179.4,
-      668.8,
-      182.7,
-      700.1
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_b16.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 1,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      337.1,
-      624.5,
-      347.7,
-      667.4
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_b17.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 1,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      347.7,
-      624.5,
-      350.6,
-      667.4
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_b18.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 1,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      260.2,
-      616.5,
-      270.8,
-      659.3
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_b19.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 1,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      270.8,
-      616.5,
-      273.6,
-      659.3
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_b20.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 1,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      281.0,
-      640.6,
-      287.7,
-      683.4
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_b21.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 1,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      323.1,
-      600.5,
-      329.8,
-      643.3
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_b22.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 1,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      460.9,
-      665.9,
-      467.6,
-      701.4
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_b27.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 1,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      476.4,
-      660.9,
-      483.1,
-      701.4
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_b28.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 1,
     "candidate_type": "text_candidate",
     "bbox": [
       97.8,
@@ -549,13 +381,139 @@
     "page": 1,
     "candidate_type": "image_candidate",
     "bbox": [
+      137.3,
+      664.9,
+      144.0,
+      701.4
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p1_b13.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      165.9,
+      665.0,
+      178.4,
+      701.4
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p1_b14.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      179.4,
+      668.8,
+      182.7,
+      700.1
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p1_b16.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      337.1,
+      624.5,
+      350.6,
+      667.4
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p1_b17.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      260.2,
+      616.5,
+      273.6,
+      659.3
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p1_b19.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      281.0,
+      640.6,
+      287.7,
+      683.4
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p1_b21.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      323.1,
+      600.5,
+      329.8,
+      643.3
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p1_b22.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      460.9,
+      665.9,
+      467.6,
+      701.4
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p1_b27.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      476.4,
+      660.9,
+      483.1,
+      701.4
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p1_b28.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 1,
+    "candidate_type": "image_candidate",
+    "bbox": [
       460.9,
       665.9,
       467.6,
       709.5
     ],
     "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_embimg7.png",
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p1_embimg7.png",
     "n_words": null,
     "is_boilerplate": false
   },
@@ -569,7 +527,7 @@
       708.1
     ],
     "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_embimg9.png",
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p1_embimg9.png",
     "n_words": null,
     "is_boilerplate": false
   },
@@ -583,7 +541,7 @@
       682.6
     ],
     "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_vec0.png",
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p1_vec0.png",
     "n_words": null,
     "is_boilerplate": false
   },
@@ -597,7 +555,7 @@
       647.9
     ],
     "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_vec1.png",
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p1_vec1.png",
     "n_words": null,
     "is_boilerplate": false
   },
@@ -611,7 +569,7 @@
       693.5
     ],
     "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p1_vec2.png",
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p1_vec2.png",
     "n_words": null,
     "is_boilerplate": false
   },
@@ -1023,244 +981,6 @@
   },
   {
     "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      384.1,
-      396.7,
-      394.4
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b4.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      394.4,
-      396.7,
-      405.8
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b5.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      405.8,
-      396.7,
-      417.2
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b6.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      417.2,
-      396.7,
-      428.6
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b7.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      428.6,
-      396.7,
-      440.0
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b8.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      440.0,
-      396.7,
-      451.3
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b9.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      451.3,
-      396.7,
-      462.7
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b10.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      462.7,
-      396.7,
-      474.1
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b11.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      474.1,
-      396.7,
-      485.5
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b12.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      485.5,
-      396.7,
-      496.8
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b13.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      496.8,
-      396.7,
-      508.2
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b14.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      508.2,
-      396.7,
-      519.6
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b15.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      519.6,
-      396.7,
-      531.0
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b16.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      531.0,
-      396.7,
-      542.3
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b17.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      542.3,
-      396.7,
-      553.7
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b18.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      553.7,
-      396.7,
-      565.1
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b19.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      198.6,
-      565.1,
-      396.7,
-      575.7
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p4_b20.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 4,
     "candidate_type": "text_candidate",
     "bbox": [
       97.5,
@@ -1313,6 +1033,20 @@
     "text": "CBZ form I\n0.032\nCBZ form II\n0.054\nCBZ form III\n0.026\nCBZ–SUC PM\n0.024\nCBZ–SUC\n0.004\nCBZ–SAC PM\n0.026\nCBZ–SAC form I\n0.008\nCBZ–SAC form II\n0.064",
     "crop_path": null,
     "n_words": 28,
+    "is_boilerplate": false
+  },
+  {
+    "page": 4,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      198.6,
+      384.1,
+      396.7,
+      575.7
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p4_b4.png",
+    "n_words": null,
     "is_boilerplate": false
   },
   {
@@ -1387,6 +1121,20 @@
   },
   {
     "page": 5,
+    "candidate_type": "text_candidate",
+    "bbox": [
+      268.3,
+      644.2,
+      327.0,
+      653.4
+    ],
+    "text": "Figure 3. Cont.",
+    "crop_path": null,
+    "n_words": 3,
+    "is_boilerplate": false
+  },
+  {
+    "page": 5,
     "candidate_type": "image_candidate",
     "bbox": [
       100.7,
@@ -1395,7 +1143,7 @@
       379.7
     ],
     "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p5_b13.png",
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p5_b13.png",
     "n_words": null,
     "is_boilerplate": false
   },
@@ -1409,7 +1157,7 @@
       414.8
     ],
     "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p5_b14.png",
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p5_b14.png",
     "n_words": null,
     "is_boilerplate": false
   },
@@ -1423,7 +1171,7 @@
       379.7
     ],
     "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p5_b15.png",
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p5_b15.png",
     "n_words": null,
     "is_boilerplate": false
   },
@@ -1437,7 +1185,7 @@
       414.8
     ],
     "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p5_b16.png",
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p5_b16.png",
     "n_words": null,
     "is_boilerplate": false
   },
@@ -1451,7 +1199,7 @@
       570.0
     ],
     "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p5_b17.png",
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p5_b17.png",
     "n_words": null,
     "is_boilerplate": false
   },
@@ -1465,7 +1213,7 @@
       605.1
     ],
     "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p5_b18.png",
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p5_b18.png",
     "n_words": null,
     "is_boilerplate": false
   },
@@ -1479,7 +1227,7 @@
       570.0
     ],
     "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p5_b19.png",
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p5_b19.png",
     "n_words": null,
     "is_boilerplate": false
   },
@@ -1493,22 +1241,8 @@
       605.1
     ],
     "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p5_b20.png",
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p5_b20.png",
     "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 5,
-    "candidate_type": "text_candidate",
-    "bbox": [
-      268.3,
-      644.2,
-      327.0,
-      653.4
-    ],
-    "text": "Figure 3. Cont.",
-    "crop_path": null,
-    "n_words": 3,
     "is_boilerplate": false
   },
   {
@@ -1537,62 +1271,6 @@
     "text": "(c) ",
     "crop_path": null,
     "n_words": 1,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      101.5,
-      124.6,
-      182.0,
-      198.8
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b6.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      197.5,
-      88.8,
-      289.3,
-      233.9
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b7.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      304.8,
-      124.6,
-      385.2,
-      198.8
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b8.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      401.4,
-      88.8,
-      493.2,
-      233.9
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b9.png",
-    "n_words": null,
     "is_boilerplate": false
   },
   {
@@ -1639,216 +1317,6 @@
   },
   {
     "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      207.2,
-      547.9,
-      389.5,
-      558.9
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b14.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      207.2,
-      558.9,
-      389.5,
-      570.2
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b15.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      207.2,
-      570.2,
-      389.5,
-      581.5
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b16.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      207.2,
-      581.5,
-      389.5,
-      592.8
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b17.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      207.2,
-      592.8,
-      389.5,
-      604.1
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b18.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      207.2,
-      604.1,
-      389.5,
-      615.4
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b19.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      207.2,
-      615.4,
-      389.5,
-      626.7
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b20.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      207.2,
-      626.7,
-      389.5,
-      638.0
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b21.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      207.2,
-      638.0,
-      389.5,
-      649.3
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b22.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      207.2,
-      649.3,
-      389.5,
-      660.6
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b23.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      207.2,
-      660.6,
-      389.5,
-      671.9
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b24.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      207.2,
-      671.9,
-      389.5,
-      683.2
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b25.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      207.2,
-      683.2,
-      389.5,
-      694.5
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b26.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      207.2,
-      694.5,
-      389.5,
-      705.8
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b27.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      207.2,
-      705.8,
-      389.5,
-      717.0
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p6_b28.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 6,
     "candidate_type": "text_candidate",
     "bbox": [
       97.8,
@@ -1859,6 +1327,76 @@
     "text": "Figure 4. The apparent ﬁrst-order plots for the photodegradation of CBZ polymorphs, PMs, and\ncocrystals. The symbols represent changes in the remaining percentages of CBZ form I (#), form II (\b),\nform III (\b), CBZ–SUC PM (△), CBZ–SUC (▲), CBZ–SAC PM (□), CBZ–SAC form I (■), and CBZ–SAC\nform II (■). Data are presented as the means ± SD of 3 values.",
     "crop_path": null,
     "n_words": 62,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      101.5,
+      124.6,
+      182.0,
+      198.8
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p6_b6.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      197.5,
+      88.8,
+      289.3,
+      233.9
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p6_b7.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      304.8,
+      124.6,
+      385.2,
+      198.8
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p6_b8.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      401.4,
+      88.8,
+      493.2,
+      233.9
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p6_b9.png",
+    "n_words": null,
+    "is_boilerplate": false
+  },
+  {
+    "page": 6,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      207.2,
+      547.9,
+      389.5,
+      717.0
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p6_b14.png",
+    "n_words": null,
     "is_boilerplate": false
   },
   {
@@ -2045,20 +1583,6 @@
   },
   {
     "page": 7,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      189.4,
-      374.1,
-      405.9,
-      578.0
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p7_b13.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 7,
     "candidate_type": "text_candidate",
     "bbox": [
       97.8,
@@ -2097,6 +1621,20 @@
     "text": "The cocrystallization technique improves the physicochemical properties of an API without\nmodifying its chemical structure. In the present study, we prepared three cocrystals, including\ntwo polymorphs, of CBZ and investigated their photostabilities compared with that of the CBZ\npolymorphs. CBZ–SUC and CBZ–SAC form I showed better photostability than the conventional\ncrystal forms. The order of the photostability of solid forms estimated using FT-IR RAS was almost\nconsistent with the order obtained from the colorimetric measurement (Figure S4, Supplementary\nMaterials). Based on these results, the discoloration on the surface of the tablets was due to the\nphotodecomposition of API. CBZ is transformed into CBZ cyclobutyl dimer and 10,11-epoxide after\nirradiation by a mercury-vapor lamp [29] and a near-UV ﬂuorescent lamp [22]. These photoproducts",
     "crop_path": null,
     "n_words": 122,
+    "is_boilerplate": false
+  },
+  {
+    "page": 7,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      189.4,
+      374.1,
+      405.9,
+      578.0
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p7_b13.png",
+    "n_words": null,
     "is_boilerplate": false
   },
   {
@@ -2283,20 +1821,6 @@
   },
   {
     "page": 10,
-    "candidate_type": "image_candidate",
-    "bbox": [
-      77.6,
-      242.5,
-      160.7,
-      271.6
-    ],
-    "text": null,
-    "crop_path": "D:\\gh\\ChemX\\data\\sample\\crops\\p10_b2.png",
-    "n_words": null,
-    "is_boilerplate": false
-  },
-  {
-    "page": 10,
     "candidate_type": "text_candidate",
     "bbox": [
       167.8,
@@ -2307,6 +1831,20 @@
     "text": "© 2019 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access\narticle distributed under the terms and conditions of the Creative Commons Attribution\n(CC BY) license (http://creativecommons.org/licenses/by/4.0/).",
     "crop_path": null,
     "n_words": 31,
+    "is_boilerplate": false
+  },
+  {
+    "page": 10,
+    "candidate_type": "image_candidate",
+    "bbox": [
+      77.6,
+      242.5,
+      160.7,
+      271.6
+    ],
+    "text": null,
+    "crop_path": "D:\\gh\\Melatonin.pdf\\data\\sample_crystals-09-00553-v2\\crops\\p10_b2.png",
+    "n_words": null,
     "is_boilerplate": false
   }
 ]

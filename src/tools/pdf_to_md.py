@@ -107,30 +107,33 @@ def validate_md(candidates_json_path: str, md_text: str) -> dict:
     }
 
 
-if __name__ == "__main__":
-    PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+def _process_one_pdf(pdf_path: Path, project_root: Path,
+                     candidates_json_override: Path | None = None) -> None:
+    """
+    Конвертирует один PDF в markdown и кладёт результат в ТУ ЖЕ папку
+    data/sample_<имя файла>/, что уже создал extract_candidates.py для
+    этого PDF (там лежит его candidates.json и crops/) - чтобы не
+    разводить два разных способа именования папок между двумя скриптами
+    пайплайна.
 
-    default_pdf = PROJECT_ROOT / "data" / "crystals-09-00553-v2.pdf"
-    default_candidates = PROJECT_ROOT / "data" / "sample" / "candidates.json"
-    out_md = PROJECT_ROOT / "data" / "sample" / "crystals-09-00553-v2.md"
-    out_report = PROJECT_ROOT / "data" / "sample" / "pdf_to_md_report.json"
+    Если candidates.json для этого PDF ещё не существует (extract_candidates.py
+    не запускали) - не падаем всем batch-прогоном, а пропускаем файл с
+    предупреждением, чтобы один забытый шаг не останавливал обработку
+    остальных статей.
+    """
+    sample_dir = project_root / "data" / f"sample_{pdf_path.stem}"
+    candidates_json_path = candidates_json_override or (sample_dir / "candidates.json")
+    out_md = sample_dir / f"{pdf_path.stem}.md"
+    out_report = sample_dir / "pdf_to_md_report.json"
 
-    if len(sys.argv) > 1:
-        pdf_path = Path(sys.argv[1])
-        if not pdf_path.is_absolute():
-            pdf_path = PROJECT_ROOT / pdf_path
-    else:
-        pdf_path = default_pdf
+    print(f"=== {pdf_path.name} ===")
 
-    candidates_json_path = Path(sys.argv[2]) if len(sys.argv) > 2 else default_candidates
-
-    if not pdf_path.exists():
-        raise FileNotFoundError(f"PDF файл не найден по пути: {pdf_path}")
     if not candidates_json_path.exists():
-        raise FileNotFoundError(
-            f"candidates.json не найден по пути: {candidates_json_path}. "
-            f"Сначала запустите extract_candidates.py на этом же PDF."
+        print(
+            f"ПРОПУЩЕНО: {candidates_json_path} не найден. "
+            f"Сначала запустите extract_candidates.py на {pdf_path.name}.\n"
         )
+        return
 
     os.makedirs(out_md.parent, exist_ok=True)
 
@@ -138,11 +141,41 @@ if __name__ == "__main__":
     report = validate_md(str(candidates_json_path), md_text)
 
     out_md.write_text(md_text, encoding="utf-8")
-    out_report.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    out_report.write_text(json.dumps(report, ensure_ascii=False, indent=2),
+                          encoding="utf-8")
 
     print(f"Markdown сохранён в {out_md} ({report['md_char_count']} символов)")
     print(f"Отчёт сохранён в {out_report}")
     if report["warning"]:
         print(f"ВНИМАНИЕ: {report['warning']}")
     if report["leftover_picture_noise"]:
-        print("ВНИМАНИЕ: остался необработанный блок 'Start of picture text' - проверить _strip_picture_noise")
+        print(
+            "ВНИМАНИЕ: остался необработанный блок 'Start of picture text' - проверить _strip_picture_noise")
+    print()
+
+
+if __name__ == "__main__":
+    PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+    data_dir = PROJECT_ROOT / "data"
+
+    if len(sys.argv) > 1:
+        pdf_path = Path(sys.argv[1])
+        if not pdf_path.is_absolute():
+            pdf_path = PROJECT_ROOT / pdf_path
+        if not pdf_path.exists():
+            raise FileNotFoundError(f"PDF файл не найден по пути: {pdf_path}")
+
+        candidates_override = None
+        if len(sys.argv) > 2:
+            candidates_override = Path(sys.argv[2])
+            if not candidates_override.is_absolute():
+                candidates_override = PROJECT_ROOT / candidates_override
+
+        _process_one_pdf(pdf_path, PROJECT_ROOT, candidates_override)
+    else:
+        pdf_paths = sorted(data_dir.glob("*.pdf"))
+        if not pdf_paths:
+            raise FileNotFoundError(f"В папке {data_dir} не найдено ни одного .pdf")
+        print(f"Найдено PDF в {data_dir}: {len(pdf_paths)}\n")
+        for pdf_path in pdf_paths:
+            _process_one_pdf(pdf_path, PROJECT_ROOT)
