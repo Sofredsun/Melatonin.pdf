@@ -1,4 +1,8 @@
 .venv/
+venv/
 .idea/
 data/
 results/
+.env
+.env.local
+.env.*.local
