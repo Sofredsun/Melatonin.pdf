@@ -12,6 +12,7 @@ import csv
 import json
 import re
 import sys
+from fractions import Fraction
 from pathlib import Path
 from typing import Any
 from langchain_core.messages import HumanMessage, SystemMessage
@@ -28,9 +29,7 @@ SYSTEM_PROMPT = (
     "Return valid JSON only."
 )
 
-USER_PROMPT = """Extract every cocrystal, salt, or multicomponent crystal sample described in the article.
-
-Return a JSON object with exactly this shape:
+USER_PROMPT = """Extract every cocrystal, salt, or multicomponent crystal sample described in the article. Return a JSON object with exactly this shape:
 {{
   "samples": [
     {{
@@ -49,6 +48,18 @@ Rules:
 - Do not invent SMILES or properties.
 - If a field is not explicitly recoverable, use an empty string.
 - JSON only. No markdown.
+
+SCOPE — which cocrystals to include:
+- ONLY extract cocrystals/salts that are the subject of actual experimental investigation in the article (i.e. they appear in results, experimental sections, tables, conclusions, or characterisation data).
+- DO NOT extract cocrystals mentioned only in the Introduction, Background, or Literature Review as examples, context, or prior work references — these are cited merely for illustration and are not studied in this article.
+- A good signal that a cocrystal belongs in the output: it appears in a results table, a figure, an XRPD/DSC/NMR discussion, or the conclusions section.
+
+NAMING RULES for name_drug and name_coformer:
+- Always use the name exactly as it appears in the article text.
+- Strongly prefer the trivial/common/trade name used by the authors (e.g. "Furosemide", "Nitrofurantoin", "Carbamazepine") over the IUPAC systematic name.
+- If the article uses a trivial name anywhere in the text, use that trivial name — do NOT substitute it with the IUPAC name.
+- Use the IUPAC name only if the article itself never provides a trivial name for that compound and the IUPAC name is the only name given.
+- For name_cocrystal: use the abbreviation or short name as written in the article (e.g. "CBZ-SAC", "FUR-NIC"). If the article provides no short name, construct it from the trivial names of the components as the article would (e.g. "Furosemide-Nicotinamide"). Do not use IUPAC names in name_cocrystal unless the article itself does so.
 
 Article metadata:
 pdf: {pdf}
@@ -72,6 +83,70 @@ def normalize_ratio(value) -> str:
     value = re.sub(r"\s+", "", value)
     value = value.replace("−", "-")
     return value
+
+
+MMOL_PAIR_RE = re.compile(
+    r"\((\d+(?:\.\d+)?)\s*mmol\).*?\((\d+(?:\.\d+)?)\s*mmol\)",
+    re.IGNORECASE,
+)
+
+
+def _normal_search_text(text: str) -> str:
+    """Collapse PDF line breaks while preserving hyphenated sample names."""
+    text = re.sub(r"(?<=\w)[-\u2013\u2014]\s+(?=\w)", "-", text)
+    return re.sub(r"\s+", " ", text)
+
+
+def _ratio_from_mmol_pair(left: str, right: str) -> str:
+    """Convert two mmol amounts to a compact stoichiometric ratio."""
+    try:
+        ratio = Fraction(left) / Fraction(right)
+    except (ValueError, ZeroDivisionError):
+        return ""
+    ratio = ratio.limit_denominator(12)
+    return f"{ratio.numerator}:{ratio.denominator}"
+
+
+def _ratio_near_names(text: str, names: list[str]) -> str:
+    """Find a mmol-derived ratio near any supplied sample/coformer name."""
+    lowered = text.lower()
+    for raw_name in names:
+        name = _normal_search_text(clean_text(raw_name)).lower()
+        if not name:
+            continue
+        start = 0
+        while True:
+            idx = lowered.find(name, start)
+            if idx < 0:
+                break
+            window = text[max(0, idx - 700) : idx + 900]
+            match = MMOL_PAIR_RE.search(window)
+            if match:
+                return _ratio_from_mmol_pair(match.group(1), match.group(2))
+            start = idx + len(name)
+    return ""
+
+
+def infer_missing_ratios(text: str, samples: list[ExtractedSample]) -> list[ExtractedSample]:
+    """Fill blank ratios from nearby experimental mmol amounts when possible."""
+    search_text = _normal_search_text(text)
+    inferred: list[ExtractedSample] = []
+    for sample in samples:
+        ratio = normalize_ratio(sample.ratio_cocrystal)
+        if not ratio:
+            ratio = _ratio_near_names(
+                search_text,
+                [sample.name_cocrystal, sample.name_coformer],
+            )
+        inferred.append(
+            ExtractedSample(
+                name_cocrystal=sample.name_cocrystal,
+                ratio_cocrystal=ratio,
+                name_drug=sample.name_drug,
+                name_coformer=sample.name_coformer,
+            )
+        )
+    return deduplicate_samples(inferred)
 
 
 def _json_payload(text: str) -> Any:
@@ -157,7 +232,7 @@ def extract_samples_with_llm(metadata: ArticleMetadata, text: str, cache_path: P
         payload = json.loads(cache_path.read_text(encoding="utf-8"))
         return parse_samples(payload.get("content", ""))
 
-    llm = build_gateway_llm(timeout=60, max_retries=0)
+    llm = build_gateway_llm(timeout=180, max_retries=1)
     context = compact_context(text)
     messages = [
         SystemMessage(content=SYSTEM_PROMPT),
@@ -318,7 +393,7 @@ def extract_pdf(pdf_path: Path, project_root: Path, use_llm: bool = True, allow_
         except Exception as exc:
             print(
                 f"  warning: LLM extraction failed for {pdf_path.name}: "
-                f"{type(exc).__name__}: {exc}"
+                f"{type(exc).__name__}: {exc}",
                 file=sys.stderr,
                 flush=True,
             )
@@ -327,6 +402,7 @@ def extract_pdf(pdf_path: Path, project_root: Path, use_llm: bool = True, allow_
     if not samples and catalog_fallback:
         samples = catalog_samples_for_doi(project_root, metadata.doi)
 
+    samples = infer_missing_ratios(text, samples)
     resolver = CompoundResolver(project_root=project_root, allow_pubchem=allow_pubchem)
     rows = build_prediction_rows(metadata, samples, resolver, aliases=aliases)
     resolver.save_cache()

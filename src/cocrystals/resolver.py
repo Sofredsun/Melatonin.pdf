@@ -26,6 +26,27 @@ PREFERRED_IUPAC_BY_INCHIKEY = {
     # Gold article uses this valid IUPAC synonym for carbamazepine.
     "FFGPTBGBLSHEPO-UHFFFAOYSA-N": "5H-dibenzo[b,f]azepine-5-carboxamide"
 }
+RESOLVER_QUERY_ALIASES = {
+    # Article wording; PubChem uses the standard trivial name.
+    "chrysanthemum acid": "chrysanthemic acid"
+}
+
+
+def default_catalog_path(project_root: Path, catalog_path: Path | None = None) -> Path:
+    """
+    Prefer a project-local curated catalog if it exists; otherwise use the
+    bundled ChemX cocrystal table.
+    """
+    if catalog_path is not None:
+        return catalog_path
+    candidates = [
+        project_root / "data" / "catalog.csv",
+        project_root / "ChemX" / "datasets" / "Co-crystals.csv",
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return candidates[0]
 
 
 def clean_text(value: str | None) -> str:
@@ -92,7 +113,7 @@ class CompoundResolver:
         """
         self.project_root = project_root
         self.cache_path = cache_path or project_root / ".cache" / "compound_resolver.json"
-        self.catalog_path = catalog_path or project_root / "data" / "catalog.csv"
+        self.catalog_path = default_catalog_path(project_root, catalog_path)
         self.allow_pubchem = allow_pubchem
         self.allow_opsin = allow_opsin
         self.cache: dict[str, dict[str, Any]] = self._load_cache()
@@ -141,7 +162,7 @@ class CompoundResolver:
                             name=name,
                             smiles=smiles,
                             inchikey=inchikey,
-                            source="data/catalog.csv"
+                            source=str(self.catalog_path)
                         )
                     )
         return catalog
@@ -157,16 +178,18 @@ class CompoundResolver:
         if not name:
             return CompoundResolution(query="")
 
+        query_name = name
+        name = RESOLVER_QUERY_ALIASES.get(lookup_key(name), name)
         key = lookup_key(name)
         cached = self.cache.get(key)
         if cached:
-            resolution = CompoundResolution(query=name, **cached)
+            resolution = CompoundResolution(query=query_name, **cached)
             return self._finalize_name(resolution, prefer_iupac_name)
 
         local = self.catalog.get(key)
         if local:
             resolution = CompoundResolution(
-                query=name,
+                query=query_name,
                 name=local.name,
                 smiles=local.smiles,
                 inchikey=local.inchikey,
@@ -185,6 +208,7 @@ class CompoundResolver:
         resolution = self._resolve_opsin(name)
         if not resolution.smiles and self.allow_pubchem:
             resolution = self._resolve_pubchem(name)
+        resolution.query = query_name
 
         resolution = self._finalize_name(resolution, prefer_iupac_name)
         self._remember(key, resolution)

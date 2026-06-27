@@ -21,7 +21,7 @@ KEYWORD_RE = re.compile(
     r"ratio|prepared|obtained|form\s+[IVX]+|coformer|co-former",
     re.IGNORECASE
 )
-ALIAS_RE = re.compile(r"([A-Za-z][A-Za-z0-9,\-'\u2013\u2014\u2032\s]+?)\s*\(([A-Z][A-Z0-9\-]{1,10})\)")
+ALIAS_RE = re.compile(r"([A-Za-z0-9][A-Za-z0-9,\-'\u2013\u2014\u2032\s]+?)\s*\(([A-Z0-9][A-Z0-9\-]{1,10})\)")
 
 
 def read_pdf_text(pdf_path: Path) -> str:
@@ -110,6 +110,53 @@ def guess_title(text: str) -> str:
     return ""
 
 
+def format_publisher_year(publisher: str, year: str, author_surname: str = "") -> str:
+    """Склеиваем идентификатор статьи и год в формате Wang2024 или MDPI2019."""
+    year = (year or "").strip()
+    author_surname = re.sub(r"[^A-Za-z\-']", "", (author_surname or "").strip())
+    if author_surname and year:
+        return f"{author_surname}{year}"
+    publisher = re.sub(r"\s+", "", (publisher or "").strip())
+    if publisher and year:
+        return f"{publisher}{year}"
+    return author_surname or publisher or year
+
+
+AUTHOR_ENTRY_RE = re.compile(
+    r"[A-Z][a-z]+(?:\s+[A-Z]\.?)?\s+[A-Z][A-Za-z\-']+(?:\s+\d+[,\*]*)?"
+)
+
+
+def guess_first_author_surname(text: str) -> str:
+    """Фамилия первого автора с первой страницы, например Yutani или Li."""
+    first_page = text.split("<!-- page 2 -->", 1)[0]
+    lines = [" ".join(line.split()) for line in first_page.splitlines()]
+    skip = re.compile(
+        r"^(<!--|citation|article|abstract|keywords|contents lists|available online|"
+        r"research open access|copyright|©|http|www\.|how to cite|international edition|"
+        r"german edition|supporting information|correspondence|received:|accepted:|published:)",
+        re.IGNORECASE,
+    )
+    for line in lines[:35]:
+        if skip.search(line) or len(line) < 20 or len(line) > 350:
+            continue
+        if not re.match(
+            r"^[A-Z][a-z]+\s+[A-Z][A-Za-z\-']+(?:\s+\d+[,\*]*)?(?:,|\s+and\b)",
+            line,
+        ):
+            continue
+        entries = AUTHOR_ENTRY_RE.findall(line)
+        if len(entries) < 2:
+            continue
+        match = re.match(
+            r"^(?:[A-Z][a-z]+\.?\s+)+([A-Z][A-Za-z\-']+)",
+            re.sub(r"\*+", "", entries[0]).strip(),
+        )
+        if match:
+            return match.group(1)
+    return ""
+
+
 def guess_year(text: str, doi: str) -> str:
     """
     Определяем год статьи по наиболее часто встречающемуся году в тексте
@@ -130,12 +177,15 @@ def article_metadata(pdf_path: Path, text: str) -> ArticleMetadata:
     Объединяем все метаданные
     """
     doi = extract_doi(text, pdf_path)
+    publisher = guess_publisher(doi, text)
+    year = guess_year(text, doi)
+    author_surname = guess_first_author_surname(text)
     return ArticleMetadata(
-        pdf=pdf_path.stem,
         doi=doi,
         title=guess_title(text),
-        publisher=guess_publisher(doi, text),
-        year=guess_year(text, doi)
+        publisher=publisher,
+        year=year,
+        pdf=format_publisher_year(publisher, year, author_surname),
     )
 
 
@@ -170,14 +220,17 @@ def extract_aliases(text: str) -> dict[str, str]:
     for match in ALIAS_RE.finditer(text[:30000]):
         full, alias = match.groups()
         full = " ".join(full.split()).strip(" ,;:.")
+        full = re.sub(r"^(?:and|or)\s+", "", full, flags=re.IGNORECASE)
         alias = alias.strip()
         if not full or not alias:
             continue
-            # Часто в заголовках говорится "CBZ-succinic acid (SUC)"; сохраняем химическое название после аббревиатуры
-        if "-" in full or "\u2013" in full or "\u2014" in full:
-            parts = re.split(r"[-\u2013\u2014]", full)
-            if parts and re.search(r"[a-z]", parts[-1]):
-                full = parts[-1].strip()
+        if not re.search(r"[A-Z]", alias):
+            continue
+        # Часто в заголовках говорится "CBZ-succinic acid (SUC)";
+        # сохраняем химическое название после аббревиатуры, но не режем IUPAC-дефисы.
+        cocrystal_prefix = re.match(r"^[A-Z0-9]{2,10}\s*[-\u2013\u2014]\s*(.+[a-z].*)$", full)
+        if cocrystal_prefix:
+            full = cocrystal_prefix.group(1).strip()
         words = full.split()
         if len(words) > 8:
             full = " ".join(words[-8:])

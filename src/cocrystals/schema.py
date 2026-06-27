@@ -26,11 +26,11 @@ class ArticleMetadata:
     """
     Метаданные статьи (не участвуют в метрике)
     """
-    pdf: str
     doi: str = ""
     title: str = ""
     publisher: str = ""
     year: str = ""
+    pdf: str = ""
 
 
 @dataclass
