@@ -18,9 +18,7 @@ def _strip_picture_noise(text: str) -> str:
 
 
 def _basename_any(path: str) -> str:
-    """
-    Берет basename вручную по обоим разделителям.
-    """
+    """Берет basename вручную по обоим разделителям."""
     return path.replace("\\", "/").rsplit("/", 1)[-1]
 
 
@@ -87,9 +85,7 @@ def build_markdown(pdf_path: str, candidates_json_path: str, crops_rel_dir: str 
 
 
 def validate_md(candidates_json_path: str, md_text: str) -> dict:
-    """
-    Сверка против candidates.json
-    """
+    """Сверка против candidates.json"""
     images_by_page = load_page_images(candidates_json_path)
     expected = sum(len(v) for v in images_by_page.values())
     actual = md_text.count("![")
@@ -110,18 +106,18 @@ def validate_md(candidates_json_path: str, md_text: str) -> dict:
 def _process_one_pdf(pdf_path: Path, project_root: Path,
                      candidates_json_override: Path | None = None) -> None:
     """
-    Конвертирует один PDF в markdown и кладёт результат в ТУ ЖЕ папку
+    Конвертирует один PDF в markdown и кладет результат в ту же папку
     data/sample_<имя файла>/, что уже создал extract_candidates.py для
     этого PDF (там лежит его candidates.json и crops/) - чтобы не
     разводить два разных способа именования папок между двумя скриптами
     пайплайна.
 
-    Если candidates.json для этого PDF ещё не существует (extract_candidates.py
+    Если candidates.json для этого PDF еще не существует (extract_candidates.py
     не запускали) - не падаем всем batch-прогоном, а пропускаем файл с
     предупреждением, чтобы один забытый шаг не останавливал обработку
     остальных статей.
     """
-    sample_dir = project_root / "data" / f"sample_{pdf_path.stem}"
+    sample_dir = project_root / "results" / "samples" / f"sample_{pdf_path.stem}"
     candidates_json_path = candidates_json_override or (sample_dir / "candidates.json")
     out_md = sample_dir / f"{pdf_path.stem}.md"
     out_report = sample_dir / "pdf_to_md_report.json"
@@ -144,8 +140,8 @@ def _process_one_pdf(pdf_path: Path, project_root: Path,
     out_report.write_text(json.dumps(report, ensure_ascii=False, indent=2),
                           encoding="utf-8")
 
-    print(f"Markdown сохранён в {out_md} ({report['md_char_count']} символов)")
-    print(f"Отчёт сохранён в {out_report}")
+    print(f"Markdown сохранен в {out_md} ({report['md_char_count']} символов)")
+    print(f"Отчет сохранен в {out_report}")
     if report["warning"]:
         print(f"ВНИМАНИЕ: {report['warning']}")
     if report["leftover_picture_noise"]:
@@ -156,7 +152,7 @@ def _process_one_pdf(pdf_path: Path, project_root: Path,
 
 if __name__ == "__main__":
     PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-    data_dir = PROJECT_ROOT / "data"
+    data_dir = PROJECT_ROOT / "data" / "pdfs"
 
     if len(sys.argv) > 1:
         pdf_path = Path(sys.argv[1])

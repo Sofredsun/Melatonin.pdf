@@ -1,6 +1,9 @@
-import fitz  # PyMuPDF
+import fitz
 import json
 import os
+import time
+import multiprocessing as mp
+from queue import Empty
 from dataclasses import dataclass, asdict
 from typing import Literal
 from pathlib import Path
@@ -78,7 +81,7 @@ def _merge_adjacent_blocks(
     items: list[tuple[str, tuple]], edge_tol: float = 1.5, length_tol: float = 1.5
 ) -> list[tuple[str, tuple]]:
     """
-    items: список (тег, bbox) для растровых блоков ОДНОЙ страницы.
+    items: список (тег, bbox) для растровых блоков одной страницы.
 
     Склеивает два блока, если они стыкуются ровно по одной общей стороне:
       - один заканчивается там, где начинается другой (с точностью edge_tol) -
@@ -108,15 +111,11 @@ def _merge_adjacent_blocks(
                     continue
                 tag_b, b = blocks[j]
 
-                # стык по вертикали: одна картинка под другой - совпадает
-                # левый и правый край (это и есть "длина" по X), низ верхней
-                # картинки касается верха нижней
+                # Стык по вертикали: одна картинка под другой
                 same_x = abs(a[0] - b[0]) <= length_tol and abs(a[2] - b[2]) <= length_tol
                 touch_y = abs(a[3] - b[1]) <= edge_tol or abs(b[3] - a[1]) <= edge_tol
 
-                # стык по горизонтали: одна картинка справа от другой -
-                # совпадает верхний и нижний край, правый край левой
-                # картинки касается левого края правой
+                # Стык по горизонтали: одна картинка справа от другой
                 same_y = abs(a[1] - b[1]) <= length_tol and abs(a[3] - b[3]) <= length_tol
                 touch_x = abs(a[2] - b[0]) <= edge_tol or abs(b[2] - a[0]) <= edge_tol
 
@@ -134,8 +133,8 @@ def _merge_adjacent_blocks(
 
 def _is_probably_table_like(text: str) -> bool:
     """
-    Грубая эвристика: если в текстовом блоке много коротких "ячеек"
-    через множественные пробелы/таб - вероятно это безграничная
+    Если в текстовом блоке много коротких "ячеек"
+    через множественные пробелы/таб - вероятно, это безграничная
     (borderless) таблица, а не обычный абзац.
     """
     lines = [l for l in text.split("\n") if l.strip()]
@@ -147,13 +146,13 @@ def _is_probably_table_like(text: str) -> bool:
 
 def _is_probably_boilerplate(bbox: tuple, page: fitz.Page, page_idx: int, n_pages: int) -> bool:
     """
-    Грубая позиционная эвристика для логотипов журнала / CC BY плашек.
+    Позиционная эвристика для логотипов журнала / CC BY плашек.
 
-    Расширено после проверки на реальной статье: логотипы на первой
-    странице может стоять как в правом, так и в левом верхнем углу (два
-    разных лого), а плашка CC BY на последней странице стоит сразу после
+    Доготипы на первой странице может стоять как в правом,
+    так и в левом верхнем углу (два разных лого),
+    а плашка CC BY на последней странице стоит сразу после
     "Conflicts of Interest" - это середина страницы, не нижний край.
-    Поэтому для последней страницы берём широкий нижний пояс (от 50% высоты),
+    Поэтому для последней страницы берем широкий нижний пояс (от 50% высоты),
     а не жесткие 85%.
     """
     x0, y0, x1, y1 = bbox
@@ -165,24 +164,32 @@ def _is_probably_boilerplate(bbox: tuple, page: fitz.Page, page_idx: int, n_page
     return area < 3000 and (near_top_corner or near_lower_half_last)
 
 
-def extract_candidates(pdf_path: str, out_dir: str, zoom: float = 3.0) -> list[Candidate]:
+def extract_candidates_iter(pdf_path: str, out_dir: str, zoom: float = 3.0):
+    """
+    То же самое, что extract_candidates(), но генератор: выдает
+    (page_idx, list[Candidate]) постранично, а не все одним списком в
+    конце. Нужно для extract_candidates_with_timeout() ниже - если
+    процесс зависнет/упадет на какой-то странице, уже обработанные
+    страницы до нее не теряются, их можно сохранить как частичный
+    результат вместо того, чтобы выбрасывать все.
+    """
     doc = fitz.open(pdf_path)
     n_pages = doc.page_count
     os.makedirs(out_dir, exist_ok=True)
-    candidates: list[Candidate] = []
 
     for page_idx, page in enumerate(doc):
+        page_candidates: list[Candidate] = []
         blocks = page.get_text("dict")["blocks"]
 
         # type==1 блоки откладываем - сначала только bbox, без рендера,
-        # чтобы успеть склеить полосы по углу+длине ДО того, как они лягут
+        # чтобы успеть склеить полосы по углу+длине до того, как они лягут
         # на диск как отдельные файлы
         raw_image_blocks: list[tuple[str, tuple]] = []
 
         for b_idx, block in enumerate(blocks):
             bbox = tuple(round(v, 1) for v in block["bbox"])
 
-            if block["type"] == 0:  # текстовый блок
+            if block["type"] == 0:  # Текстовый блок
                 text = "\n".join(
                     "".join(span["text"] for span in line["spans"])
                     for line in block["lines"]
@@ -190,7 +197,7 @@ def extract_candidates(pdf_path: str, out_dir: str, zoom: float = 3.0) -> list[C
                 n_words = len(text.split())
                 if n_words == 0:
                     continue
-                candidates.append(
+                page_candidates.append(
                     Candidate(
                         page=page_idx,
                         candidate_type="text_candidate",
@@ -200,13 +207,13 @@ def extract_candidates(pdf_path: str, out_dir: str, zoom: float = 3.0) -> list[C
                     )
                 )
 
-            elif block["type"] == 1:  # изображение/вектор-блок - откладываем
+            elif block["type"] == 1:  # Изображение/вектор-блок - откладываем
                 raw_image_blocks.append((f"b{b_idx}", bbox))
 
-        # embedded images через get_images - дедуп НА УРОВНЕ ИСХОДНЫХ
-        # (ещё не склеенных) блоков. Если сравнивать с уже склеенным bbox,
-        # IoU маленькой полоски против большого объединённого прямоугольника
-        # всегда низкий и дедуп не сработает - поэтому дедуп идёт раньше склейки.
+        # embedded images через get_images - дедуп на уровне исходных блоков
+        # (еще не склеенных). Если сравнивать с уже склеенным bbox,
+        # IoU маленькой полоски против большого объединенного прямоугольника
+        # всегда низкий и дедуп не сработает - поэтому дедуп идет раньше склейки.
         raw_image_bboxes = [bbox for _, bbox in raw_image_blocks]
         embedded_blocks: list[tuple[str, tuple]] = []
         for img_idx, img in enumerate(page.get_images(full=True)):
@@ -218,20 +225,27 @@ def extract_candidates(pdf_path: str, out_dir: str, zoom: float = 3.0) -> list[C
             for r in rects:
                 bbox = tuple(round(v, 1) for v in r)
                 if any(_bbox_iou(bbox, e) > 0.85 for e in raw_image_bboxes):
-                    continue  # тот же объект уже пришёл из get_text("dict")
+                    continue
                 embedded_blocks.append((f"embimg{img_idx}", bbox))
 
-        # склейка по совпадению угла+длины (см. _merge_adjacent_blocks) -
-        # и type==1, и embedded вместе, т.к. картинка может прийти любым путём
+        # Склейка по совпадению угла+длины (см. _merge_adjacent_blocks)
         merged_image_blocks = _merge_adjacent_blocks(raw_image_blocks + embedded_blocks)
 
-        # теперь рендерим - один раз на каждый итоговый (возможно склеенный) блок
+        # Теперь рендерим - один раз на каждый итоговый (возможно склеенный) блок
         for tag, bbox in merged_image_blocks:
+            # Защита от вырожденных bbox (нулевая/почти нулевая ширина или высота)
+            if bbox[2] - bbox[0] < 1 or bbox[3] - bbox[1] < 1:
+                print(f"  ПРОПУЩЕН вырожденный bbox {bbox} на странице {page_idx} (image)")
+                continue
             crop_path = os.path.join(out_dir, f"p{page_idx}_{tag}.png")
             mat = fitz.Matrix(zoom, zoom)
-            pix = page.get_pixmap(matrix=mat, clip=fitz.Rect(bbox))
-            pix.save(crop_path)
-            candidates.append(
+            try:
+                pix = page.get_pixmap(matrix=mat, clip=fitz.Rect(bbox))
+                pix.save(crop_path)
+            except Exception as e:
+                print(f"  ОШИБКА рендера {bbox} на странице {page_idx}: {e} - пропущен")
+                continue
+            page_candidates.append(
                 Candidate(
                     page=page_idx,
                     candidate_type="image_candidate",
@@ -241,7 +255,7 @@ def extract_candidates(pdf_path: str, out_dir: str, zoom: float = 3.0) -> list[C
                 )
             )
 
-        # векторная графика (структуры/схемы, нарисованные линиями)
+        # Векторная графика (структуры/схемы, нарисованные линиями)
         drawing_rects = [d["rect"] for d in page.get_drawings() if not d["rect"].is_empty]
         clusters = [r for r in _merge_overlapping_rects(drawing_rects)
                     if r.width >= 15 and r.height >= 15]
@@ -251,8 +265,8 @@ def extract_candidates(pdf_path: str, out_dir: str, zoom: float = 3.0) -> list[C
         for rect in clusters:
             expanded = fitz.Rect(rect.x0 - absorb_pad, rect.y0 - absorb_pad,
                                   rect.x1 + absorb_pad, rect.y1 + absorb_pad)
-            for ci, c in enumerate(candidates):
-                if c.page != page_idx or c.candidate_type not in ("image_candidate", "text_candidate"):
+            for ci, c in enumerate(page_candidates):
+                if c.candidate_type not in ("image_candidate", "text_candidate"):
                     continue
                 if ci in absorbed_idx:
                     continue
@@ -265,15 +279,22 @@ def extract_candidates(pdf_path: str, out_dir: str, zoom: float = 3.0) -> list[C
             merged_clusters.append(rect)
 
         if absorbed_idx:
-            candidates = [c for ci, c in enumerate(candidates) if ci not in absorbed_idx]
+            page_candidates = [c for ci, c in enumerate(page_candidates) if ci not in absorbed_idx]
 
         for v_idx, rect in enumerate(merged_clusters):
+            vec_bbox = tuple(round(v, 1) for v in rect)
+            if vec_bbox[2] - vec_bbox[0] < 1 or vec_bbox[3] - vec_bbox[1] < 1:
+                print(f"  ПРОПУЩЕН вырожденный bbox {vec_bbox} на странице {page_idx} (vector)")
+                continue
             crop_path = os.path.join(out_dir, f"p{page_idx}_vec{v_idx}.png")
             mat = fitz.Matrix(zoom, zoom)
-            pix = page.get_pixmap(matrix=mat, clip=rect)
-            pix.save(crop_path)
-            vec_bbox = tuple(round(v, 1) for v in rect)
-            candidates.append(
+            try:
+                pix = page.get_pixmap(matrix=mat, clip=rect)
+                pix.save(crop_path)
+            except Exception as e:
+                print(f"  ОШИБКА рендера {vec_bbox} на странице {page_idx}: {e} - пропущен")
+                continue
+            page_candidates.append(
                 Candidate(
                     page=page_idx,
                     candidate_type="vector_candidate",
@@ -283,17 +304,104 @@ def extract_candidates(pdf_path: str, out_dir: str, zoom: float = 3.0) -> list[C
                 )
             )
 
-    return candidates
+        yield page_idx, page_candidates
+
+
+def extract_candidates(pdf_path: str, out_dir: str, zoom: float = 3.0) -> list[Candidate]:
+    """Собирает генератор в один список"""
+    result: list[Candidate] = []
+    for _, page_candidates in extract_candidates_iter(pdf_path, out_dir, zoom):
+        result.extend(page_candidates)
+    return result
+
+
+def _extract_worker(pdf_path: str, out_dir: str, result_queue) -> None:
+    """
+    Высылает результат постранично (("page", page_idx, [...])), а не одним
+    куском в конце - если процесс зависнет на конкретной странице и его
+    придется убить, родитель уже будет знать про все страницы до нее.
+    """
+    try:
+        for page_idx, page_candidates in extract_candidates_iter(pdf_path, out_dir):
+            result_queue.put(("page", page_idx, [asdict(c) for c in page_candidates]))
+        result_queue.put(("done", None, None))
+    except Exception as e:
+        result_queue.put(("error", repr(e), None))
+
+
+def extract_candidates_with_timeout(
+    pdf_path: str, out_dir: str, timeout: int = 180
+) -> list[Candidate]:
+    """
+    То же самое, что extract_candidates(), но в отдельном процессе с
+    общим ограничением по времени. Результат собирается постранично по
+    мере поступления (см. _extract_worker) - если процесс завис на
+    какой-то странице и пришлось его убить по таймауту, либо если он
+    упал с исключением, все равно возвращаются кандидаты со всех
+    страниц, которые успели обработаться до зависания/ошибки, а не
+    пустой результат
+    """
+    result_queue: mp.Queue = mp.Queue()
+    proc = mp.Process(target=_extract_worker, args=(pdf_path, out_dir, result_queue))
+    proc.start()
+
+    collected: list[Candidate] = []
+    pages_done = 0
+    status = "timeout"
+    error_message = None
+    deadline = time.time() + timeout
+
+    while True:
+        remaining = deadline - time.time()
+        if remaining <= 0:
+            status = "timeout"
+            break
+        try:
+            kind, a, b = result_queue.get(timeout=remaining)
+        except Empty:
+            status = "timeout"
+            break
+        if kind == "page":
+            collected.extend(Candidate(**c) for c in b)
+            pages_done += 1
+        elif kind == "done":
+            status = "done"
+            break
+        elif kind == "error":
+            status = "error"
+            error_message = a
+            break
+
+    if proc.is_alive():
+        proc.terminate()
+    proc.join()
+
+    if status == "done":
+        return collected
+
+    if collected:
+        reason = "таймаут" if status == "timeout" else f"ошибка: {error_message}"
+        print(
+            f"  ВНИМАНИЕ: {pdf_path} обработан ЧАСТИЧНО ({pages_done} страниц, "
+            f"{len(collected)} кандидатов) - прервано ({reason})"
+        )
+        return collected
+
+    if status == "timeout":
+        raise TimeoutError(
+            f"Обработка {pdf_path} не дала ни одной страницы за {timeout}с - "
+            f"процесс убит. Похоже на зависание в PyMuPDF/MuPDF на "
+            f"патологической векторной графике уже первой страницы."
+        )
+    raise RuntimeError(error_message)
 
 
 def _process_one_pdf(pdf_path: Path, project_root: Path) -> None:
     """
     Запускает extract_candidates на одном PDF и сохраняет результат в
-    отдельную папку data/sample_<имя файла без .pdf>/ (crops/ + candidates.json) -
-    чтобы результаты разных статей не перезатирали друг друга в общей
-    data/sample/, как было раньше при одном захардкоженном пути.
+    отдельную папку data/sample_<имя файла без .pdf>/ (crops/ + candidates.json)
     """
-    out_root = project_root / "data" / f"sample_{pdf_path.stem}"
+    out_root = project_root / "results" / "samples" / f"sample_{pdf_path.stem}"
     out_dir = out_root / "crops"
     out_json = out_root / "candidates.json"
 
@@ -301,7 +409,7 @@ def _process_one_pdf(pdf_path: Path, project_root: Path) -> None:
     os.makedirs(out_json.parent, exist_ok=True)
 
     print(f"=== {pdf_path.name} ===")
-    candidates = extract_candidates(str(pdf_path), str(out_dir))
+    candidates = extract_candidates_with_timeout(str(pdf_path), str(out_dir))
 
     print(f"Найдено кандидатов: {len(candidates)}")
     for c in candidates:
@@ -321,7 +429,7 @@ if __name__ == "__main__":
     import sys
 
     PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-    data_dir = PROJECT_ROOT / "data"
+    data_dir = PROJECT_ROOT / "data" / "pdfs"
 
     if len(sys.argv) > 1:
         pdf_path = Path(sys.argv[1])
@@ -335,5 +443,15 @@ if __name__ == "__main__":
         if not pdf_paths:
             raise FileNotFoundError(f"В папке {data_dir} не найдено ни одного .pdf")
         print(f"Найдено PDF в {data_dir}: {len(pdf_paths)}\n")
+        failed: list[str] = []
         for pdf_path in pdf_paths:
-            _process_one_pdf(pdf_path, PROJECT_ROOT)
+            try:
+                _process_one_pdf(pdf_path, PROJECT_ROOT)
+            except Exception as e:
+                # Один проблемный PDF не должен останавливать обработку
+                print(f"ОШИБКА на {pdf_path.name}: {e}\n")
+                failed.append(pdf_path.name)
+        if failed:
+            print(f"Не обработано файлов: {len(failed)}")
+            for name in failed:
+                print(f"  - {name}")
