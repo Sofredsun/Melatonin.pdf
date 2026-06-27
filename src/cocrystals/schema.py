@@ -6,6 +6,7 @@ from dataclasses import dataclass
 # Порядок колонок в prediction.csv
 OUTPUT_COLUMNS = [
     "pdf",
+    "doi",
     "name_cocrystal",
     "ratio_cocrystal",
     "name_drug",
