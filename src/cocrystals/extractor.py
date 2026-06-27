@@ -385,7 +385,7 @@ def build_prediction_rows(metadata: ArticleMetadata, samples: list[ExtractedSamp
                 title=metadata.title,
                 publisher=metadata.publisher,
                 year=metadata.year,
-                name_drug=drug.name or drug_name,
+                name_drug=drug_name,
                 SMILES_drug=drug.smiles,
                 SMILES_drug_inchikey=drug.inchikey,
                 name_cocrystal=sample.name_cocrystal,
