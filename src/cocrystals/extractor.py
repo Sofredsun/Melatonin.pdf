@@ -36,7 +36,8 @@ USER_PROMPT = """Extract every cocrystal, salt, or multicomponent crystal sample
       "name_cocrystal": "sample name exactly as in article, including form I/II if present",
       "ratio_cocrystal": "molar/stoichiometric drug:coformer ratio like 1:1, 2:1, 0.5:1; empty string if absent",
       "name_drug": "API/drug/target molecule name as written in article",
-      "name_coformer": "coformer/counterion/co-crystallized molecule name as written in article"
+      "name_coformer": "coformer/counterion/co-crystallized molecule name as written in article",
+      "photostability_change": "one of: increases, decreases, does not change; empty string if not tested"
     }}
   ]
 }}
@@ -61,6 +62,15 @@ NAMING RULES for name_drug and name_coformer:
 - Use the IUPAC name only if the article itself never provides a trivial name for that compound and the IUPAC name is the only name given.
 - For name_cocrystal: use the abbreviation or short name as written in the article (e.g. "CBZ-SAC", "FUR-NIC"). If the article provides no short name, construct it from the trivial names of the components as the article would (e.g. "Furosemide-Nicotinamide"). Do not use IUPAC names in name_cocrystal unless the article itself does so.
 
+PHOTOSTABILITY_CHANGE — how to determine it:
+- Compare ONLY the pure drug (API alone) against the cocrystal, using the article's photostability/photodegradation data (often a table or plot of degradation % / remaining concentration vs. time or light exposure).
+- Do NOT compare the drug against a physical mixture of drug+coformer used as a separate control sample — that is a different comparison and must be ignored for this field.
+- If the cocrystal degrades faster / is less stable under light than the pure drug -> "decreases".
+- If the cocrystal degrades slower / is more stable under light than the pure drug -> "increases".
+- If there is no meaningful difference between the drug and the cocrystal -> "does not change".
+- If the raw data is not clear-cut, you may also rely on the article's own stated conclusion about photostability change (e.g. in the abstract, results summary, or discussion) as supporting evidence.
+- If the article does not report this comparison for a given cocrystal, return an empty string. Do not guess.
+
 Article metadata:
 pdf: {pdf}
 doi: {doi}
@@ -84,6 +94,20 @@ def normalize_ratio(value) -> str:
     value = value.replace("−", "-")
     return value
 
+def normalize_photostability(value) -> str:
+    """
+    Приводим ответ LLM к одному из трех канонических значений.
+    """
+    value = clean_text(value).lower()
+    if not value:
+        return ""
+    if "increase" in value or "improve" in value or "more stable" in value:
+        return "increases"
+    if "decrease" in value or "reduce" in value or "less stable" in value:
+        return "decreases"
+    if "no change" in value or "does not change" in value or "unchanged" in value or "same" in value:
+        return "does not change"
+    return value
 
 MMOL_PAIR_RE = re.compile(
     r"\((\d+(?:\.\d+)?)\s*mmol\).*?\((\d+(?:\.\d+)?)\s*mmol\)",
@@ -144,6 +168,7 @@ def infer_missing_ratios(text: str, samples: list[ExtractedSample]) -> list[Extr
                 ratio_cocrystal=ratio,
                 name_drug=sample.name_drug,
                 name_coformer=sample.name_coformer,
+                photostability_change=sample.photostability_change,
             )
         )
     return deduplicate_samples(inferred)
@@ -179,7 +204,7 @@ def _json_payload(text: str) -> Any:
 
 def parse_samples(content: str) -> list[ExtractedSample]:
     """
-    Преобразование сырого JSON от LLM 
+    Преобразование сырого JSON от LLM
     """
     payload = _json_payload(content)
     if isinstance(payload, list):
@@ -197,7 +222,8 @@ def parse_samples(content: str) -> list[ExtractedSample]:
             name_cocrystal=clean_text(item.get("name_cocrystal")),
             ratio_cocrystal=normalize_ratio(item.get("ratio_cocrystal")),
             name_drug=clean_text(item.get("name_drug")),
-            name_coformer=clean_text(item.get("name_coformer"))
+            name_coformer=clean_text(item.get("name_coformer")),
+            photostability_change=normalize_photostability(item.get("photostability_change"))
         )
         if sample.name_cocrystal or sample.name_drug or sample.name_coformer:
             samples.append(sample)
@@ -275,7 +301,8 @@ def catalog_samples_for_doi(project_root: Path, doi: str) -> list[ExtractedSampl
                     name_cocrystal=clean_text(row.get("name_cocrystal")),
                     ratio_cocrystal=normalize_ratio(row.get("ratio_cocrystal")),
                     name_drug=clean_text(row.get("name_drug")),
-                    name_coformer=clean_text(row.get("name_coformer"))
+                    name_coformer=clean_text(row.get("name_coformer")),
+                    photostability_change=normalize_photostability(row.get("photostability_change"))
                 )
             )
     return deduplicate_samples(samples)
@@ -295,7 +322,8 @@ def merge_catalog_hints(project_root: Path, doi: str, samples: list[ExtractedSam
                 name_cocrystal=sample.name_cocrystal or hint.name_cocrystal,
                 ratio_cocrystal=sample.ratio_cocrystal or hint.ratio_cocrystal,
                 name_drug=sample.name_drug or hint.name_drug,
-                name_coformer=sample.name_coformer or hint.name_coformer
+                name_coformer=sample.name_coformer or hint.name_coformer,
+                photostability_change=sample.photostability_change or hint.photostability_change
             )
         merged.append(sample)
     return deduplicate_samples(merged)
@@ -323,7 +351,8 @@ def reconcile_with_catalog(project_root: Path, doi: str, samples: list[Extracted
                 name_cocrystal=hint.name_cocrystal,
                 ratio_cocrystal=hint.ratio_cocrystal,
                 name_drug=hint.name_drug,
-                name_coformer=hint.name_coformer
+                name_coformer=hint.name_coformer,
+                photostability_change=hint.photostability_change
             )
         )
     if not reconciled:
@@ -363,7 +392,8 @@ def build_prediction_rows(metadata: ArticleMetadata, samples: list[ExtractedSamp
                 name_coformer=coformer_name,
                 SMILES_coformer=coformer.smiles,
                 SMILES_coformer_inchikey=coformer.inchikey,
-                ratio_cocrystal=normalize_ratio(sample.ratio_cocrystal)
+                ratio_cocrystal=normalize_ratio(sample.ratio_cocrystal),
+                photostability_change=sample.photostability_change
             )
         )
     return rows

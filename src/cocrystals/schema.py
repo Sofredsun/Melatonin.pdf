@@ -6,20 +6,14 @@ from dataclasses import dataclass
 # Порядок колонок в prediction.csv
 OUTPUT_COLUMNS = [
     "pdf",
-    "doi",
-    "title",
-    "publisher",
-    "year",
+    "name_cocrystal",
+    "ratio_cocrystal",
     "name_drug",
     "SMILES_drug",
-    "SMILES_drug_inchikey",
-    "name_cocrystal",
     "name_coformer",
     "SMILES_coformer",
-    "SMILES_coformer_inchikey",
-    "ratio_cocrystal"
+    "photostability_change",
 ]
-
 
 @dataclass
 class ArticleMetadata:
@@ -42,6 +36,7 @@ class ExtractedSample:
     ratio_cocrystal: str = ""
     name_drug: str = ""
     name_coformer: str = ""
+    photostability_change: str = ""
 
 
 @dataclass
@@ -76,6 +71,7 @@ class PredictionRow:
     SMILES_coformer: str = ""
     SMILES_coformer_inchikey: str = ""
     ratio_cocrystal: str = ""
+    photostability_change: str = ""
 
     def as_dict(self) -> dict[str, str]:
         """
