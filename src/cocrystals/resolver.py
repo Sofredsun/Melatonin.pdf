@@ -2,7 +2,7 @@
 Разрешаем имена на канонические SMILES + InChIKey
 
 Имя разрешается через цепочку приоритетов (cache -> local catalog -> OPSIN -> PubChem);
-что бы мы ни получили, оно затем валидируется и канонизируется RDKit. Мы故意 никогда не позволяем LLM изобретать SMILES: структуры всегда берутся из химической базы данных или детерминированного парсера имен.
+что бы мы ни получили, оно затем валидируется и канонизируется RDKit. Мы намеренно никогда не позволяем LLM изобретать SMILES: структуры всегда берутся из химической базы данных или детерминированного парсера имён.
 """
 
 from __future__ import annotations
@@ -23,19 +23,18 @@ RDLogger.DisableLog("rdApp.error")
 
 EMPTY_VALUES = {"", "nan", "none", "null", "not_detected", "not detected"}
 PREFERRED_IUPAC_BY_INCHIKEY = {
-    # Gold article uses this valid IUPAC synonym for carbamazepine.
+    # В статье Gold используется корректный IUPAC-синоним для carbamazepine.
     "FFGPTBGBLSHEPO-UHFFFAOYSA-N": "5H-dibenzo[b,f]azepine-5-carboxamide"
 }
 RESOLVER_QUERY_ALIASES = {
-    # Article wording; PubChem uses the standard trivial name.
+    # Формулировка из статьи; в PubChem стандартное тривиальное имя.
     "chrysanthemum acid": "chrysanthemic acid"
 }
 
 
 def default_catalog_path(project_root: Path, catalog_path: Path | None = None) -> Path:
     """
-    Prefer a project-local curated catalog if it exists; otherwise use the
-    bundled ChemX cocrystal table.
+    Предпочитаем локальный каталог проекта; иначе используем встроенную таблицу ChemX.
     """
     if catalog_path is not None:
         return catalog_path
@@ -208,6 +207,8 @@ class CompoundResolver:
         resolution = self._resolve_opsin(name)
         if not resolution.smiles and self.allow_pubchem:
             resolution = self._resolve_pubchem(name)
+        if not resolution.smiles:
+            resolution = self._resolve_cactus(name)
         resolution.query = query_name
 
         resolution = self._finalize_name(resolution, prefer_iupac_name)
@@ -279,6 +280,56 @@ class CompoundResolver:
                     smiles=smiles,
                     inchikey=inchikey,
                     source="PubChem"
+                )
+        return CompoundResolution(query=name)
+
+    def _resolve_cactus(self, name: str) -> CompoundResolution:
+        """Резолвим IUPAC-имя через NCI Cactus Chemical Identifier Resolver.
+
+        Хорошо справляется с систематическими IUPAC-именами, которых нет в PubChem.
+        Пробуем несколько нормализованных вариантов имени если первый не даёт результата.
+        """
+        import ssl
+        import urllib.request
+        import urllib.parse
+
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+
+        def _fetch_smiles(query: str) -> str:
+            try:
+                encoded = urllib.parse.quote(query, safe="")
+                url = f"https://cactus.nci.nih.gov/chemical/structure/{encoded}/smiles"
+                req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                with urllib.request.urlopen(req, timeout=15, context=ctx) as resp:
+                    return resp.read().decode("utf-8").strip()
+            except Exception:
+                return ""
+
+        # Собираем небольшой набор вариантов имени для перебора по порядку
+        variants = [name]
+        # Убираем пробел между закрывающей скобкой и следующим словом (артефакт PDF):
+        # например "-5-yl) methyl" → "-5-yl)methyl"
+        v = re.sub(r"\)\s+(?=[a-z])", ")", name)
+        if v != name:
+            variants.append(v)
+        # Исправляем типичную OCR/копипаст-опечатку: "morpholinpyridin" → "morpholinopyridin"
+        for base in list(variants):
+            fixed = base.replace("morpholinpyridin", "morpholinopyridin")
+            if fixed != base:
+                variants.append(fixed)
+
+        for variant in variants:
+            raw = _fetch_smiles(variant)
+            smiles, inchikey = canonicalize_smiles(raw)
+            if smiles:
+                return CompoundResolution(
+                    query=name,
+                    name=variant,
+                    smiles=smiles,
+                    inchikey=inchikey,
+                    source="Cactus"
                 )
         return CompoundResolution(query=name)
 
