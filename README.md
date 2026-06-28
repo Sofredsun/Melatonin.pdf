@@ -154,6 +154,30 @@ PDF
 
 ---
 
+## Оценка качества (Macro-F1)
+
+Используется оригинальный скрипт организаторов eval/metric_calc.py (локально изменено: сравнение с референсом проводится по колонке doi).
+Gold-данные подгружаются автоматически с Hugging Face (ai-chem/<Dataset>) — 
+локальный gold-файл не требуется.
+
+1. Скопируйте предсказание в путь, который ожидает скрипт:
+
+\`\`\`bash
+mkdir -p eval/result/from_single_agent/cocrystals
+cp outputs/prediction.csv eval/result/from_single_agent/cocrystals/pred.csv
+\`\`\`
+
+2. Запустите скрипт из папки eval/:
+
+\`\`\`bash
+cd eval
+python metric_calc.py --dataset cocrystals --source single_agent
+\`\`\`
+
+Аналогично для benzimidazole / oxazolidinones, с заменой --dataset.
+
+---
+
 ## Структура репозитория
 
 ```
