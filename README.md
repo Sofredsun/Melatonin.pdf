@@ -162,17 +162,17 @@ Gold-данные подгружаются автоматически с Hugging
 
 1. Скопируйте предсказание в путь, который ожидает скрипт:
 
-\`\`\`bash
+```
 mkdir -p eval/result/from_single_agent/cocrystals
 cp outputs/prediction.csv eval/result/from_single_agent/cocrystals/pred.csv
-\`\`\`
+```
 
 2. Запустите скрипт из папки eval/:
 
-\`\`\`bash
+```
 cd eval
 python metric_calc.py --dataset cocrystals --source single_agent
-\`\`\`
+```
 
 Аналогично для benzimidazole / oxazolidinones, с заменой --dataset.
 
