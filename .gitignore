@@ -1,0 +1,11 @@
+.venv/
+.idea/
+__pycache__/
+.env
+.cache/
+results/
+data/
+data/input/*
+data/output/*
+*.pyc
+.DS_Store
