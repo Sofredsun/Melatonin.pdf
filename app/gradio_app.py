@@ -53,9 +53,9 @@ with gr.Blocks(title="DataCon 2026 — Экстрактор химических
         with gr.Column(scale=1):
             file_input = gr.File(label="Загрузите PDF", file_types=[".pdf"])
             domain_dropdown = gr.Dropdown(
-                choices=["benzimidazoles", "cocrystals", "complexes", "eyedrops", "nanomag"],
+                choices=["cocrystals", "benzimidazoles", "oxazolidinones"],  #  теперь три домена
                 label="Выберите домен",
-                value="nanomag"
+                value="cocrystals"
             )
             submit_btn = gr.Button("🔍 Извлечь данные")
         with gr.Column(scale=2):
