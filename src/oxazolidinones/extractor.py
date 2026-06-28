@@ -198,22 +198,22 @@ def build_prediction_rows(
     """
     Собираем выходные строки prediction CSV
     """
+    resolved_cache: dict[str, str] = {}
     rows: list[PredictionRow] = []
     for rec in records:
-        # SMILES разрешаем только из явного IUPAC/систематического имени, которое вернул LLM
-        smiles = ""
-        if rec.compound_name:
-            resolution = resolver.resolve(
-                strip_alias_suffix(rec.compound_name),
-                prefer_iupac_name=False
-            )
-            smiles = resolution.smiles
+        cid = rec.compound_id.strip()
+        if cid not in resolved_cache:
+            # Приоритет: явное IUPAC-имя от LLM, иначе compound_id
+            # (работает для референсных препаратов типа Linezolid)
+            name = rec.compound_name or cid
+            resolution = resolver.resolve(strip_alias_suffix(name), prefer_iupac_name=False)
+            resolved_cache[cid] = resolution.smiles
         rows.append(
             PredictionRow(
                 pdf=metadata.pdf,
                 doi=metadata.doi,
-                compound_id=rec.compound_id,
-                smiles=smiles,
+                compound_id=cid,
+                smiles=resolved_cache[cid],
                 target_type=rec.target_type,
                 target_relation=rec.target_relation,
                 target_value=rec.target_value,

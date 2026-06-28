@@ -16,7 +16,6 @@ OUTPUT_COLUMNS = [
     "bacteria"
 ]
 
-
 @dataclass
 class ArticleMetadata:
     """
