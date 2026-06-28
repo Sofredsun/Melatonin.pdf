@@ -53,7 +53,7 @@ USER_PROMPT = """Extract every quantitative antimicrobial/antiproliferative acti
       "target_relation": "one of: =, >, <, >=, <=",
       "target_value": "the bare number only, no units, no operator, e.g. 32 or 1.95",
       "target_units": "unit exactly as printed, e.g. µg/mL, µM, mm, mol/kg",
-      "bacteria": "full Latin binomial species name (Genus species), resolved from any table abbreviation using the assay description and organism hints given below"
+      "bacteria": "the bacterium exactly as the article itself writes it for this measurement — do not expand to the full Latin name unless the article does so itself"
     }}
   ]
 }}
@@ -66,7 +66,12 @@ Rules:
 - If a value has an inequality ("> 512", "< 0.97"), put the operator in target_relation and the bare number in target_value. If no operator is shown, target_relation is "=".
 - If a table cell gives a range like "32-64" that you cannot confidently decompose into a single value + relation, skip that cell rather than inventing a number.
 - If the target value is reported per cell line (e.g. IC50 against a cancer cell line, not a bacterium), still extract it and put the cell line name in "bacteria" exactly as named (e.g. "MCF-7", "HepG2") — this field is reused for any biological target named in the table/column header.
-- Bacteria/organism names: tables in this domain often use short column-header codes (Bc, Sa, Ec, Pa, Ab, Ca, or "E. coli", "S. aureus"...) that are usually NOT explained right next to the table. Use the assay-description text and the organism hints below to match each code to its full species name, matching the same left-to-right / Gram-positive-then-Gram-negative-then-fungi order the codes appear in the table header.
+- Names of bacteria: Tables in this section often use abbreviated organism names in the column headers (e.g., E. coli, S. aureus) without further explanation. Use the analysis description, the article text, and the prompts below to determine WHICH species (S. aureus or E. coli) each table code refers to — then write it using the article's own wording for that species, not necessarily the full Latin name.
+- Extract ONLY bacterial organisms. NEVER extract fungi, yeasts, molds, or any other non-bacterial microorganisms. Exclude all fungal species, including but not limited to Candida, Aspergillus, Cryptococcus, Trichophyton, Microsporum, Saccharomyces, Fusarium, Rhizopus, Mucor, Penicillium, and any other fungal taxa, even if they are listed together with bacteria in the article.
+Output format:
+Copy the bacterium designation exactly as the article itself writes it for that measurement — do not expand abbreviations to the full Latin name and do not invent a different wording than what the article already uses for that species elsewhere (e.g. if the article calls it "S. aureus" throughout, write "S. aureus"; if it writes "Staphylococcus aureus", write that; if it writes "Escherichia coli ATCC 25922" or "S. aureus (RCMB10010)", keep it exactly like that — do not add or remove parentheses).
+Use the genus-species resolution only to figure out WHICH of the two target species a table column code refers to — once you know which one it is, write it the way the article itself names it, not a canonical form you invent.
+SCOPE IS STRICTLY LIMITED TO Staphylococcus aureus AND Escherichia coli (including any abbreviation, strain, or resistant variant of these two species, e.g. MRSA, VRSA). Do NOT extract measurements against any other bacterium or fungus.
 - Do not invent SMILES, names, or values. If target_value, target_type, or bacteria cannot be determined confidently for a cell, omit that measurement entirely rather than guessing.
 - JSON only. No markdown.
 
@@ -77,7 +82,7 @@ Article metadata:
 pdf: {pdf}
 doi: {doi}
 title: {title}
-
+ 
 Article text/context:
 {context}
 """
@@ -137,6 +142,26 @@ _REFERENCE_DRUG_DENYLIST = {
     "cefazolin",
 }
 
+_FUNGUS_GENUS_DENYLIST = (
+    "candida", "aspergillus", "penicillium", "fusarium", "cryptococcus",
+    "trichophyton", "microsporum", "saccharomyces", "rhizopus", "mucor",
+    "histoplasma", "blastomyces", "coccidioides", "malassezia",
+)
+_SAUREUS_TOKENS = ("staphylococcus aureus", "s. aureus", "s aureus", "mrsa", "msrsa", "vrsa")
+_ECOLI_TOKENS = ("escherichia coli", "e. coli", "e coli")
+
+
+def _is_in_scope_bacterium(value: str) -> bool:
+    """True если значение похоже на S. aureus/E. coli (в любом написании/штамме)."""
+    lowered = value.lower()
+    if any(genus in lowered for genus in _FUNGUS_GENUS_DENYLIST):
+        return False
+    if any(token in lowered for token in _SAUREUS_TOKENS):
+        return True
+    if any(token in lowered for token in _ECOLI_TOKENS):
+        return True
+    return False
+
 
 def normalize_relation(value: str) -> str:
     """Приводим оператор отношения к одному из TARGET_RELATIONS, по умолчанию '='."""
@@ -180,21 +205,7 @@ def split_relation_value(relation: str, value: str) -> tuple[str, str]:
 
 
 def normalize_bacteria(value: str) -> str:
-    """Срезаем висящий strain-код в скобках и приводим Genus species к стандартному капитализу.
-
-    TODO: формат сверить с golden-датасетом на HF — неясно, ожидается ли strain
-    код (ATCC ...) в составе значения поля bacteria, или только Genus species.
-    """
-    value = clean_text(value)
-    if not value:
-        return ""
-    value = re.sub(r"\s*\([^()]{2,60}\)\s*$", "", value).strip()
-    parts = value.split()
-    if not parts:
-        return ""
-    parts[0] = parts[0][:1].upper() + parts[0][1:].lower()
-    parts[1:] = [p.lower() for p in parts[1:]]
-    return " ".join(parts)
+    return clean_text(value)
 
 
 def apply_bacteria_alias(value: str, aliases: dict[str, str]) -> str:
@@ -470,21 +481,27 @@ def extract_pdf(
 
     # Финальная нормализация bacteria уже после LLM: на случай, если LLM всё же
     # вернула короткий код как есть, а не развёрнутое имя.
-    measurements = [
-        ExtractedMeasurement(
-            compound_id=m.compound_id,
-            compound_name=m.compound_name,
-            target_type=m.target_type,
-            target_relation=m.target_relation,
-            target_value=m.target_value,
-            target_units=m.target_units,
-            bacteria=apply_bacteria_alias(m.bacteria, bacteria_aliases),
+    expanded: list[ExtractedMeasurement] = []
+    for m in measurements:
+        bacteria = apply_bacteria_alias(m.bacteria, bacteria_aliases)
+        if not _is_in_scope_bacterium(bacteria):
+            continue
+        expanded.append(
+            ExtractedMeasurement(
+                compound_id=m.compound_id,
+                compound_name=m.compound_name,
+                target_type=m.target_type,
+                target_relation=m.target_relation,
+                target_value=m.target_value,
+                target_units=m.target_units,
+                bacteria=bacteria,
+            )
         )
-        for m in measurements
-    ]
+    measurements = expanded
 
     resolver = CompoundResolver(project_root=project_root, allow_pubchem=allow_pubchem)
-    rows = build_prediction_rows(metadata, measurements, resolver, compound_names_by_id=compound_names_by_id)
+    rows = build_prediction_rows(metadata, measurements, resolver,
+                                 compound_names_by_id=compound_names_by_id)
     resolver.save_cache()
     return rows
 

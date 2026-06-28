@@ -11,7 +11,6 @@ OUTPUT_COLUMNS = [
     "target_type",
     "target_relation",
     "target_value",
-    "target_value",
     "target_units",
     "bacteria",
 ]

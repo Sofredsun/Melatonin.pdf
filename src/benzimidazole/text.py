@@ -157,8 +157,8 @@ def article_metadata(pdf_path: Path, text: str) -> ArticleMetadata:
     )
 
 
-
 # Compound_id -> систематическое имя (для резолва SMILES без LLM)
+
 _NAME_START_RE = r"\d{1,2}(?:,\d{1,2})*-|N,N-|N-"
 _COMPOUND_NAME_RE = re.compile(
     r"(?:^|\n)\s*(?P<name>(?:" + _NAME_START_RE + r")[^\n]{10,170}(?:\n[^\n]{10,170}){0,6}?)"
@@ -167,21 +167,15 @@ _COMPOUND_NAME_RE = re.compile(
 
 
 def _join_wrapped_name(raw_name: str) -> str:
-    """
-    Склеиваем перенос строки внутри имени без лишнего пробела на дефисе.
-    """
+    """Склеиваем перенос строки внутри имени без лишнего пробела на дефисе."""
     joined = re.sub(r"-\s*\n\s*", "-", raw_name)
     joined = re.sub(r"\s*\n\s*", " ", joined)
     return " ".join(joined.split())
 
 
 def extract_compound_names_by_id(text: str) -> dict[str, str]:
-    """Детерминированно вытаскиваем compound_id -> систематическое (IUPAC) имя.
-
-    Это и есть главный рычаг против нулевого SMILES-бейзлайна: имя для
-    OPSIN/PubChem приходит напрямую из текста статьи
-    через детерминированный парсер. LLM участвует только как fallback, если
-    этот regex не нашел имя для какого-то compound_id (см. extractor.py).
+    """
+    Детерминированно вытаскиваем compound_id -> систематическое (IUPAC) имя.
     """
     names_by_id: dict[str, str] = {}
     for match in _COMPOUND_NAME_RE.finditer(text):
@@ -199,31 +193,43 @@ def extract_compound_names_by_id(text: str) -> dict[str, str]:
     return names_by_id
 
 
-
 # Организмы/штаммы: упоминания, и аббревиатура -> полное латинское название
+
+_BACTERIA_GENUS_WHITELIST = (
+    "Staphylococcus", "Escherichia", "Pseudomonas", "Bacillus", "Klebsiella",
+    "Enterococcus", "Serratia", "Salmonella", "Proteus", "Streptococcus",
+    "Micrococcus", "Clostridium", "Vibrio", "Acinetobacter", "Listeria",
+    "Shigella", "Mycobacterium",
+)
+_FUNGUS_GENUS_DENYLIST = (
+    "candida", "aspergillus", "penicillium", "fusarium", "cryptococcus",
+    "trichophyton", "microsporum", "saccharomyces", "rhizopus", "mucor",
+    "histoplasma", "blastomyces", "coccidioides", "malassezia",
+)
+
 _MICROBE_STRAIN_RE = re.compile(
     r"\b([A-Z][a-z]+\s+[a-z]{3,}(?:\s+[a-z]{3,})?)\s*"
     r"\(?\s*(?:ATCC|ATTC|NCTC|NRRL|MTCC|NCCB|CECT)\s*[\dA-Za-z\-]{2,12}\)?"
 )
-
-_MICROBE_GENUS_WHITELIST = (
-    "Staphylococcus", "Escherichia", "Pseudomonas", "Bacillus", "Klebsiella",
-    "Candida", "Aspergillus", "Enterococcus", "Serratia", "Salmonella",
-    "Proteus", "Streptococcus", "Micrococcus", "Penicillium", "Fusarium",
-    "Clostridium", "Vibrio", "Acinetobacter", "Listeria", "Shigella",
-    "Cryptococcus", "Trichophyton", "Microsporum", "Mycobacterium",
-)
 _MICROBE_GENUS_RE = re.compile(
-    r"\b(" + "|".join(_MICROBE_GENUS_WHITELIST) + r")\s+([a-z]{3,}(?:\s+[a-z]{3,})?)\b"
+    r"\b(" + "|".join(_BACTERIA_GENUS_WHITELIST) + r")\s+([a-z]{3,}(?:\s+[a-z]{3,})?)\b"
 )
 
 
 def extract_organism_mentions(text: str) -> list[str]:
     """Список организмов, упомянутых в статье, в порядке первого появления.
+
+    Используется как hint для LLM при сопоставлении табличных аббревиатур с
+    полными латинскими названиями. _MICROBE_STRAIN_RE (по суффиксу ATCC/MTCC/...)
+    род-агностичен, поэтому отдельно отфильтровываем всё, что начинается с
+    грибкового рода — иначе хинт сам подсунет LLM, например, "Candida albicans
+    (ATCC 10231)" как валидный вариант.
     """
     seen: dict[str, None] = {}
     for match in _MICROBE_STRAIN_RE.finditer(text):
         name = " ".join(match.group(1).split())
+        if name.split()[0].lower() in _FUNGUS_GENUS_DENYLIST:
+            continue
         seen.setdefault(name, None)
     for match in _MICROBE_GENUS_RE.finditer(text):
         name = f"{match.group(1)} {match.group(2)}"
@@ -250,8 +256,12 @@ def extract_bacteria_aliases(text: str) -> dict[str, str]:
         full = " ".join(full.split())
         if len(full.split()) < 2:
             continue
+        if full.split()[0].lower() in _FUNGUS_GENUS_DENYLIST:
+            continue
         aliases.setdefault(abbr.lower(), full)
     for full, abbr in _NAME_PAREN_ABBR_RE.findall(text):
+        if full.split()[0].lower() in _FUNGUS_GENUS_DENYLIST:
+            continue
         aliases.setdefault(abbr.lower(), " ".join(full.split()))
     return aliases
 
@@ -275,9 +285,7 @@ _TABLE_STOP_RE = re.compile(
 
 
 def extract_table_blocks(text: str, max_chars: int = 6000, max_lines_per_table: int = 80) -> str:
-    """
-    Грубо вырезаем блоки текста, начинающиеся со строки "Table N".
-    """
+    """Грубо вырезаем блоки текста, начинающиеся со строки "Table N"."""
     lines = text.splitlines()
     blocks: list[str] = []
     used = 0
