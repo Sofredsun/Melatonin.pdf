@@ -1,9 +1,0 @@
-PyMuPDF==1.27.2.3
-rdkit==2025.9.3
-PubChemPy==1.0.5
-py2opsin==1.2.0
-langchain-openai==1.3.3
-python-dotenv==1.2.2
-openai>=1.0.0
-pandas>=2.0.0
-gradio>=4.0.0
