@@ -1,0 +1,10 @@
+openai>=1.0.0
+pandas>=2.0.0
+pymupdf>=1.23.0
+gradio>=4.0.0
+python-dotenv>=1.0.0
+
+rdkit>=2023.9.3         # если не ставится, используйте conda или rdkit
+langchain-openai>=0.1.0
+pubchempy>=1.0.4
+py2opsin==1.2.0          # опционально, требует Java (можно пропустить)
