@@ -1,0 +1,241 @@
+pdf,doi,compound_id,smiles,target_type,target_relation,target_value,target_units,bacteria
+MDPI2022,10.3390/molecules27031103,11a,CC(=O)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,11a,CC(=O)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,>,256,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,11a,CC(=O)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,=,256,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,11a,CC(=O)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,>,256,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,11b,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)C1CCCCC1,MIC,=,128,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,11b,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)C1CCCCC1,MIC,>,256,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,11b,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)C1CCCCC1,MIC,=,128,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,11b,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)C1CCCCC1,MIC,>,256,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,11c,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)C1CCCO1,MIC,>,256,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,11c,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)C1CCCO1,MIC,>,256,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,11c,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)C1CCCO1,MIC,=,128,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,11c,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)C1CCCO1,MIC,>,256,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,11d,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)c1ccccc1,MIC,>,256,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,11d,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)c1ccccc1,MIC,>,256,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,11d,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)c1ccccc1,MIC,=,256,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,11d,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)c1ccccc1,MIC,>,256,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,11e,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)c1cccnc1,MIC,>,256,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,11e,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)c1cccnc1,MIC,>,256,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,11e,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)c1cccnc1,MIC,>,256,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,11e,O=C(OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1)c1cccnc1,MIC,>,256,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,11f,O=C(NC1CCCCC1)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,=,256,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,11f,O=C(NC1CCCCC1)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,11f,O=C(NC1CCCCC1)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,11f,O=C(NC1CCCCC1)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,11g,O=C(Nc1ccc(Cl)cc1)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,>,256,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,11g,O=C(Nc1ccc(Cl)cc1)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,=,256,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,11g,O=C(Nc1ccc(Cl)cc1)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,>,256,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,11g,O=C(Nc1ccc(Cl)cc1)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,11h,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,11h,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,11h,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,=,64,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,11h,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCOCC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,11i,O=C1O[C@@H](COS(=O)(=O)c2ccccc2)CN1c1ccc(N2CCOCC2)nc1,MIC,>,256,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,11i,O=C1O[C@@H](COS(=O)(=O)c2ccccc2)CN1c1ccc(N2CCOCC2)nc1,MIC,=,256,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,11i,O=C1O[C@@H](COS(=O)(=O)c2ccccc2)CN1c1ccc(N2CCOCC2)nc1,MIC,>,256,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,11i,O=C1O[C@@H](COS(=O)(=O)c2ccccc2)CN1c1ccc(N2CCOCC2)nc1,MIC,>,256,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,12a,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)C4CCCCC4)CC3)nc2)C(=O)O1,MIC,=,32,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,12a,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)C4CCCCC4)CC3)nc2)C(=O)O1,MIC,=,32,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,12a,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)C4CCCCC4)CC3)nc2)C(=O)O1,MIC,=,32,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,12a,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)C4CCCCC4)CC3)nc2)C(=O)O1,MIC,=,16,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,12b,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)c4ccc(C(F)(F)F)cc4)CC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,12b,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)c4ccc(C(F)(F)F)cc4)CC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,12b,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)c4ccc(C(F)(F)F)cc4)CC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,12b,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)c4ccc(C(F)(F)F)cc4)CC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,12c,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)CCc4ccccc4)CC3)nc2)C(=O)O1,MIC,=,64,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,12c,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)CCc4ccccc4)CC3)nc2)C(=O)O1,MIC,=,32,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,12c,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)CCc4ccccc4)CC3)nc2)C(=O)O1,MIC,=,32,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,12c,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)CCc4ccccc4)CC3)nc2)C(=O)O1,MIC,=,32,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,12d,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)/C=C/c4cccnc4)CC3)nc2)C(=O)O1,MIC,=,32,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,12d,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)/C=C/c4cccnc4)CC3)nc2)C(=O)O1,MIC,=,64,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,12d,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)/C=C/c4cccnc4)CC3)nc2)C(=O)O1,MIC,=,64,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,12d,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)/C=C/c4cccnc4)CC3)nc2)C(=O)O1,MIC,=,64,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,12e,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)NC4CCCCC4)CC3)nc2)C(=O)O1,MIC,=,32,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,12e,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)NC4CCCCC4)CC3)nc2)C(=O)O1,MIC,=,32,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,12e,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)NC4CCCCC4)CC3)nc2)C(=O)O1,MIC,=,16,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,12e,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(C(=O)NC4CCCCC4)CC3)nc2)C(=O)O1,MIC,=,32,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,12f,,MIC,=,128,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,12f,,MIC,=,128,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,12f,,MIC,=,64,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,12f,,MIC,=,64,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,12g,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(S(=O)(=O)c4ccc(F)cc4)CC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,12g,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(S(=O)(=O)c4ccc(F)cc4)CC3)nc2)C(=O)O1,MIC,=,32,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,12g,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(S(=O)(=O)c4ccc(F)cc4)CC3)nc2)C(=O)O1,MIC,=,32,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,12g,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(S(=O)(=O)c4ccc(F)cc4)CC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,12h,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(S(=O)(=O)c4ccc(F)cc4F)CC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,12h,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(S(=O)(=O)c4ccc(F)cc4F)CC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,12h,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(S(=O)(=O)c4ccc(F)cc4F)CC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,12h,CS(=O)(=O)OC[C@H]1CN(c2ccc(N3CCN(S(=O)(=O)c4ccc(F)cc4F)CC3)nc2)C(=O)O1,MIC,=,128,μg/mL,Staphylococcus epidermidis BNCC 186652
+MDPI2022,10.3390/molecules27031103,Linezolid,,MIC,=,2,μg/mL,Staphylococcus aureus ATCC 25923
+MDPI2022,10.3390/molecules27031103,Linezolid,,MIC,=,2,μg/mL,Streptococcus pneumoniae ATCC 49619
+MDPI2022,10.3390/molecules27031103,Linezolid,,MIC,=,2,μg/mL,Bacillus subtilis BNCC 109047
+MDPI2022,10.3390/molecules27031103,Linezolid,,MIC,=,2,μg/mL,Staphylococcus epidermidis BNCC 186652
+Madia2023,10.3390/ph16040516,2,,MIC,=,1.17,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,2,,MBC,=,2.34,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,2,,MIC,=,1.17,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,2,,MBC,=,2.34,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,2,,MIC,=,125,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,2,,MBC,=,125,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,2,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,2,,MBC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,2,,MIC,=,1.17,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,2,,MBC,=,4.68,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,2,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,2,,MBC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,2,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,2,,MBC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,3a,,MIC,=,1.17,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,3a,,MBC,=,4.68,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,3a,,MIC,=,4.68,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,3a,,MBC,=,9.36,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,3a,,MIC,=,18.75,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,3a,,MBC,=,18.75,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,3a,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,3a,,MBC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,3a,,MIC,=,1.17,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,3a,,MBC,=,4.68,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,3a,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,3a,,MBC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,3a,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,3a,,MBC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,3b,,MIC,=,2.34,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,3b,,MIC,=,18.75,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,3b,,MIC,=,37.5,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,3b,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,3b,,MIC,=,4.68,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,3b,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,3b,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,3c,,MIC,=,37.5,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,3c,,MIC,=,4.68,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,3c,,MIC,=,37.5,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,3c,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,3c,,MIC,=,4.68,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,3c,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,3c,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,3d,,MIC,=,18.75,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,3d,,MIC,=,75,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,3d,,MIC,=,125,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,3d,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,3d,,MIC,=,75,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,3d,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,3d,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,3e,,MIC,=,37.5,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,3e,,MIC,>,125,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,3e,,MIC,=,4.68,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,3e,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,3e,,MIC,>,125,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,3e,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,3e,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,3f,,MIC,=,9.36,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,3f,,MIC,=,9.36,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,3f,,MIC,=,4.68,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,3f,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,3f,,MIC,=,4.68,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,3f,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,3f,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,3g,,MIC,=,125,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,3g,,MIC,=,37.5,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,3g,,MIC,=,125,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,3g,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,3g,,MIC,=,75,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,3g,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,3g,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,3h,,MIC,=,37.5,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,3h,,MIC,=,18.75,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,3h,,MIC,=,37.5,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,3h,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,3h,,MIC,=,18.75,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,3h,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,3h,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,3i,,MIC,=,37.5,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,3i,,MIC,=,18.75,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,3i,,MIC,=,37.5,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,3i,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,3i,,MIC,=,18.75,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,3i,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,3i,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,3j,,MIC,=,2.34,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,3j,,MIC,=,9.36,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,3j,,MIC,>,125,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,3j,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,3j,,MIC,=,4.68,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,3j,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,3j,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,Nmyn,,MIC,=,18.75,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,Nmyn,,MIC,=,18.75,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,Nmyn,,MIC,=,18.75,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,Nmyn,,MIC,=,18.75,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,Nmyn,,MIC,=,18.75,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,Nmyn,,MIC,=,18.75,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,Nmyn,,MIC,=,18.75,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,4a,,MIC,=,9.36,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,4a,,MIC,=,75,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,4a,,MIC,=,18.75,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,4a,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,4a,,MIC,=,3.37,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,4a,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,4a,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,4b,,MIC,=,37.5,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,4b,,MIC,=,18.75,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,4b,,MIC,=,37.5,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,4b,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,4b,,MIC,=,18.75,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,4b,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,4b,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,4c,,MIC,=,2.34,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,4c,,MIC,=,4.68,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,4c,,MIC,=,18.75,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,4c,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,4c,,MIC,=,4.68,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,4c,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,4c,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,4d,,MIC,=,2.34,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,4d,,MIC,=,18.75,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,4d,,MIC,=,37.5,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,4d,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,4d,,MIC,=,4.68,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,4d,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,4d,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,4e,,MIC,=,2.34,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,4e,,MIC,=,4.68,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,4e,,MIC,=,37.5,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,4e,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,4e,,MIC,=,4.68,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,4e,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,4e,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,4f,,MIC,=,37.5,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,4f,,MIC,=,18.75,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,4f,,MIC,=,37.5,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,4f,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,4f,,MIC,=,18.75,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,4f,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,4f,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,4g,,MIC,=,9.36,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,4g,,MIC,=,75,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,4g,,MIC,>,125,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,4g,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,4g,,MIC,=,75,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,4g,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,4g,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,4h,,MIC,=,37.5,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,4h,,MIC,=,18.75,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,4h,,MIC,=,37.5,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,4h,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,4h,,MIC,=,18.75,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,4h,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,4h,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,4i,,MIC,=,37.5,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,4i,,MIC,=,4.68,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,4i,,MIC,=,37.5,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,4i,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,4i,,MIC,=,4.68,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,4i,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,4i,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
+Madia2023,10.3390/ph16040516,4j,,MIC,>,125,μg/mL,Bacillus subtilis MTCC 121
+Madia2023,10.3390/ph16040516,4j,,MIC,>,125,μg/mL,Staphylococcus aureus MLS-16 MTCC 2940
+Madia2023,10.3390/ph16040516,4j,,MIC,>,125,μg/mL,Staphylococcus aureus MTCC 96
+Madia2023,10.3390/ph16040516,4j,,MIC,>,125,μg/mL,Micrococcus luteus MTCC 2470
+Madia2023,10.3390/ph16040516,4j,,MIC,>,125,μg/mL,Pseudomonas aeruginosa MTCC 2453
+Madia2023,10.3390/ph16040516,4j,,MIC,>,125,μg/mL,Klebsiella planticola MTCC 530
+Madia2023,10.3390/ph16040516,4j,,MIC,>,125,μg/mL,Escherichia coli MTCC 739
