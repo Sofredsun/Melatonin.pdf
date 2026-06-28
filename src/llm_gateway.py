@@ -34,7 +34,7 @@ def _required_env(name: str) -> str:
     return value
 
 
-def build_gateway_llm(tools: Sequence[Any] | None = None, *, temperature: float = 0, timeout: float = 120, max_retries: int = 2,) -> Any:
+def build_gateway_llm(tools: Sequence[Any] | None = None, *, temperature: float = 0, timeout: float = 120, max_retries: int = 2, max_tokens: int = 16000,) -> Any:
     """
     Build an OpenAI-compatible LangChain chat model pointed at AI Gateway.
 
@@ -51,6 +51,7 @@ def build_gateway_llm(tools: Sequence[Any] | None = None, *, temperature: float 
         model=_required_env("DEFAULT_MODEL"),
         temperature=temperature,
         timeout=timeout,
-        max_retries=max_retries
+        max_retries=max_retries,
+        max_tokens=max_tokens,
     )
     return llm.bind_tools(list(tools)) if tools else llm
